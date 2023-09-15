@@ -1,208 +1,219 @@
-<!DOCTYPE HTML>
-<head>
-<meta charset="utf-8" />
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
  
-<!--
+        <!-- viewport - for mobile screens -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-    /// "Crush" template made by awhe @ https://awhe.neocities.org/
+        <!-- favicon & title -->
+        <link rel="shortcut icon" href="FAVICON LINK HERE">
+        <title>TITLE HERE</title>
  
-    /// NOTE: Feel free to delete the above credits included in the code. I do not require credit, and I encourage copying from me as much as you'd like. As always: The internet is made for sharing, and so I'm happy to be able to share this with you!
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        :root{
+            --lace: var(--black); /* change pink to the color you want */ 
+            /* options are: pink, black, blue, yellow, purple */
+            --pink: url("https://files.catbox.moe/bsr34l.png");
+            --black: url("https://files.catbox.moe/stv815.png");
+            --blue: url("https://files.catbox.moe/pweyk3.png");
+            --yellow: url("https://files.catbox.moe/r3ub8h.png");
+            --purple: url("https://files.catbox.moe/acs8xi.png");
+        }
+        
+        /****** fonts ******/
+        @font-face {
+            font-family: scratch boys;
+            src: url(https://files.catbox.moe/1sb02z.ttf);
+        }
+        
+        @font-face {
+            font-family: cerl;
+            src: url(https://dl.dropbox.com/s/vaz4fe5yzk1uiku/CHERL___.TTF);
+        }
+        
+        @font-face {
+            font-family: Adorable Doll;
+            src: url(https://dl.dropbox.com/s/plehp3a9xbtct7n/AdorableDoll.ttf);
+        }
+        
+        @font-face{
+            font-family: vintage;
+            src: url(https://files.catbox.moe/nwq0cf.ttf);
+        }
+        
+        /****** scrollbar ******/
+        ::-webkit-scrollbar{
+            display:none;
+        }
  
-    /// Originally I was wanting to learn how to use grids in HTML, and then I wanted to make a new gamelog page. And then I thought: welp, might as well share this one too!
+        /****** select hightlight ******/
+        ::selection {
+            background: #7053d0;
+            color:white;
+        }
  
-    /// I'm bad at spelling. If you see any spelling errors, no you don't! (I'm sorry, even after checking, I still usually miss something.)
+        ::-moz-selection {
+            background: #7053d0;
+            color:white;
+        }
+        
+        /****** body ******/
+        body {
+            background-color:#ffffff;
+            background-image:url();
+            background-repeat: repeat;
+            background-position: 0 0;
+            background-attachment: fixed;
+            color:#7053d0; /* default font color */
+            font-family:ms gothic; /* default font */
+            font-size:20px; /* default font size */
+            padding:10px;
+            background-image:  linear-gradient(#7053d0 1px, transparent 1px), linear-gradient(to right, #7053d0 1px, #c3bcfa 1px);
+            background-size: 20px 20px;
+        }
  
-    ==============================================================
+        /****** links ******/
+        a{
+            text-decoration: none;
+            color:#fff;
+            transition:0.3s;
+            text-shadow: -1px 0 #7053d0, 0 1px #7053d0, 1px 0 #7053d0, 0 -1px #7053d0;
+        }
  
-                    -USEFUL INFO-
+        a:hover{
+            cursor:help;
+            transition:0.3s;
+            color:#7053d0;
+            text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+        }
  
-    // margin: refers to the space AROUND an element.
-    // padding: refers to the space INSIDE an element.
-    // color: refers to TEXT COLOR.
-    // background: refers to the BACKGROUND COLOR of an element.
-    // favicon: refers to the tiny image that shows up on your website tab at the top.
-    // body: refers to the main structure of the site. think of the plain white screen before adding all your code, that's the body. 
+        /****** wrappers ******/
+        #wrapper{
+            animation: fadeEffect 1s;
+            margin: auto;
+            width:fit-content;
+            width: -moz-fit-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position:absolute;
+        }
  
-    // https://www.w3schools.com/ (This site has all the help you need if you require more assistance.)
-    // https://codepen.io/ (This site allows live previews of your code, which can be helpful when you're changing parts and still learning.)
-    // https://awhe.neocities.org/links (Shameless self plug, but I've included many many links here regarding HTML (among other things!) that may prove useful.)
-    // https://blog.hubspot.com/website/web-safe-html-css-fonts (Displays "web safe fonts" which are fonts that'll adapt to any browser on any device.)
-    // https://www.w3schools.com/tags/ref_colornames.asp (Shows you the names of colors supported by all browsers!)
- 
-    ==============================================================
- 
-    /// Just a small reminder that:
-        - You can and you should copy from me if you'd like. I don't care. My url is: https://awhe.neocities.org/
-        - Credit is always optional, whatever you feel like.
-        - For a cleaner look, I recommend removing my text additions whenever you feel comfortable to.
-        - I recommend editing on a live preview, so you can see the immediate effects of any changes you make.
-        - Have fun! Add, change, edit, etc, whatever you want! The net is yours.
- 
--->
- 
-<title>style: too cute!</title> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="/"> 
-</head>
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        /****** containers ******/
+        .container {  
+            display: grid;
+            margin: auto;
+            width:1000px;
+            grid-template-columns: 250px 1fr 1fr 250px;
+            grid-template-rows: 250px 250px 0.1fr;
+            gap: 10px 10px;
+            grid-auto-flow: row;
+            grid-template-areas:
+            "icon main main links"
+            "updates main main box"
+            "footer footer footer footer";
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+        }
 
-<style>
-body{
-    margin: 0 auto;
-    font-family: ms gothic, monospace;
-    text-align: center;
-    background-image: url('https://files.catbox.moe/wpys0v.jpg');
-    text-align: center;
-}
+        .main { 
+            grid-area: main;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+            overflow:auto;
+        }
 
-.container {  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 15px;
-  grid-auto-flow: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  grid-template-areas:
-    "side1 middle side-2"
-    "side1 middle side-2"
-    "side1 middle side-2";
-}
+        .icon { 
+            grid-area: icon;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+        }
+        
+        .icon img{
+            width:100%;
+            display:block;
+            height:auto;
+        }
 
-.side1 { 
-    grid-area: side1;
-    background:white;
-    border: 3px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-    min-height: 65vh;
+        .updates { 
+            grid-area: updates; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+            padding:10px;
+            overflow:auto;
+            line-height:130%;
+        }
 
- }
+        .links { 
+            grid-area: links; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+            text-align: center;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-.middle { 
-    grid-area: middle;
-    background:white;
-    border: 3px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-    min-height: 65vh;
+        .box { 
+            grid-area: box; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+            padding:10px;
+        }
+        
+        .footer{
+            grid-area: footer;
+            text-align:center;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+        }
+        
+        header{
+            text-align: center;
+            font-family:Adorable Doll;
+            font-size:40px;
+            margin-bottom:10px;
+        }
+        
+        .cornerimg{
+            position:absolute;
+            bottom:0;
+            right:0;
+        }
+        
+        .highlight{
+            background-color:#7053d0;
+            color:white;
+        }
+        
+    </style>
+    <body>
+        
+        <div id="wrapper">
+            
+            <div class="container">
 
- }
 
-.side-2 { 
-    grid-area: side-2; 
-    background:white;
-    border: 3px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-    min-height: 65vh;
-
-}
-
-#cont {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    max-height: 20%;
-}
-
-h3 {
-    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 0px 50px 0px 50px;
-}
-
-ul {
-    list-style-type: none;
-    display: block;
-    margin: 0;
-    padding:5px 5px 5px 5px;
-}
-
-hr{
-    border-top: 3px double red;
-}
-
-#hover a { 
-    display: inline-block; 
-    transition: .2s ease; 
-} 
-
-#hover a:hover { 
-    transform: translateY(-20%); 
-} 
-
-a{
-    color:red;
-}
-
-a:hover{
-    color:rgb(25, 0, 255);
-}
-
-.Marquee {
-    padding: 15px;
-    max-width: 100%
-}
-
-#float {
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
-    font-size:2em;
-    font-weight:bold; 
-    color: #fff;
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }    
-}
-
- .divScroll {
-overflow:scroll;
-height:100px;
-width:200px;
-}
-
-</style>
-
-<body>
-    <div id="cont">
-        <div id="float"><h1>CUTIE SPACE</h1></div>
-    <div class="container">
-        <div class="side1"><h3>LINKS</h3>
-            <hr>
-        <ul>
-            <li id="hover"><img src="/"> <a href="/">LINK 1</a></li>
-            <li id="hover"><img src="/"> <a href="/">LINK 2</a></li>
-            <li id="hover"><img src="/"> <a href="/">LINK 3</a></li>
-            <li id="hover"><img src="/"> <a href="/">LINK 4</a></li>
-            <li id="hover"><img src="/"> <a href="/">LINK 5</a></li>
-        </ul>
-        <hr>
-        <img src="https://hoarding.neocities.org/img/otherpix/med2.gif">
-        <hr>
-        <ul>
-            <li id="hover"><img src="/"> <a href="/">LINK 6</a></li>
-            <li id="hover"><img src="/"> <a href="/">LINK 7</a></li>
-            <li id="hover"><img src="/"> <a href="/">LINK 8</a></li>
-            <li id="hover"><img src="/"> <a href="/">LINK 9</a></li>
-            <li id="hover"><img src="/"> <a href="/">LINK 10</a></li>
-        </ul>
-        <hr>
-        <img src="https://hoarding.neocities.org/img/otherpix/s98.png">
-    </div>
-
-    <div class="middle"><h3>!!! WELCOME TO MY SITE !!!</h3>
-        <hr>
-        <img src="https://hoarding.neocities.org/img/otherpix/m23.gif">
-        <br>
-        <br>
-     <div class="divScroll">
+                <div class="main">
           <p>Post: <a href='html/728481112035377152.html'>728481112035377152</a></p>
   <p>Post: <a href='html/726339370839408640.html'>726339370839408640</a></p>
   <p>Post: <a href='html/submissions/719419857462018048.html'>719419857462018048</a></p>
@@ -1178,36 +1189,46 @@ width:200px;
   <p>Post: <a href='html/688358365150232576.html'>688358365150232576</a></p>
   <p>Post: <a href='html/688150126101954560.html'>688150126101954560</a></p>
   <p>Post: <a href='html/688149872876175360.html'>688149872876175360</a></p>
-  <p>Post: <a href='html/688149747175981056.html'>688149747175981056</a></p></div>
-        <hr>
-        <table>
-            <tbody>
-                <tr>
-                    <td style="padding-right:40px;"><img src="https://hoarding.neocities.org/img/otherpix/s97.gif"></td>
-                    <td>some more info can go here, or you can replace this table section with quite literally whatever. maybe add some scroll boxes or something? i guess you could even add more links if you needed.
-                    <br><br>
-                    personally, im gonna use this page for my gamelog B-) so the possibilities really <i>are</i> endless!
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="side-2"><h3>EXTRA</h3>
-        <hr>
-        <marquee class="Marquee" direction="up" scrollamount="7" behavior="scroll">
-            <center>
-            <img src="https://hoarding.neocities.org/img/stamps/more/stamp5.png">
-            <img src="https://hoarding.neocities.org/img/stamps/dau0txn-75af8827-03a6-414b-97f6-0c030442042e.gif">
-            <img src="https://hoarding.neocities.org/img/stamps/keep_on_gaying_on_stamp.png">
-            <img src="https://hoarding.neocities.org/img/stamps/tumblr_inline_okvw83bYm51rv0j40_500.gif">
-            <img src="https://hoarding.neocities.org/img/stamps/tumblr_inline_phwh7uFtj61w0aona_500.gif">
-            <img src="https://hoarding.neocities.org/img/stamps/tumblr_92c7162cda390bdd95ca49316b42f344_891d3dcb_100.png">
-            <img src="https://hoarding.neocities.org/img/stamps/more/stamp98.gif">
-            <img src="https://hoarding.neocities.org/img/stamps/more/stamp74.png">
-            </center>
-        </marquee>
-        <br><br>
-    </div>
-    </div>
-</div>
-</body>
+  <p>Post: <a href='html/688149747175981056.html'>688149747175981056</a></p>
+                </div>
+
+                <div class="icon">
+                    <img src="https://files.catbox.moe/tuxnn8.jpg">
+                </div>
+
+                <div class="updates">
+                    <header>updates</header>
+                    <span class="highlight">4.1.23</span> - weanus<br>
+                    <span class="highlight">3.31.23</span> - hi lol<br>
+                    <span class="highlight">3.30.23</span> - amongla<br>
+                    <span class="highlight">3.29.23</span> - blah<br>
+                    <span class="highlight">3.28.23</span> - lorem ipsum i guess<br>
+                    <span class="highlight">3.27.23</span> - why are you still reading this
+                </div>
+
+                <div class="links">
+                    <header>navigation</header>
+                    <a href="./">main page</a>
+                    <a href="https://www.tumblr.com/alterouscuteboygirl">tumblr</a>
+                    <a>three</a>
+                    <a>four</a>
+                    <a>five</a>
+                    <a>six</a>
+                </div>
+
+                <div class="box">
+                    you can put whatever you'd like in here :)
+                </div>
+                
+                <div class="footer">
+                    template by adilene @ adilene.net
+                </div>
+
+                <div class="cornerimg">
+                    <img src="https://files.catbox.moe/ge4sxq.png">
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
