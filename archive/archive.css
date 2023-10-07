@@ -29,10 +29,21 @@
             src: url(https://files.catbox.moe/nwq0cf.ttf);
         }
         
-        /****** scrollbar ******/
-        ::-webkit-scrollbar{
-            display:none;
-        }
+      /* width */
+      ::-webkit-scrollbar {
+        width: 1px;
+        height: 1px;
+      }
+    
+      /* Track */
+      ::-webkit-scrollbar-track {
+        border-radius: 1px;
+      }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #000;
+        border-radius: 1px;
+      }
  
         /****** select hightlight ******/
         ::selection {
