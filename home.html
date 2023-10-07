@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plurgai monster !!</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+<!--FONTS-->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
+  </style>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&family=Tangerine:wght@700&display=swap');
+  </style>
+
+<!--BLUR ON HOVER-->
+  <style>
+  
+    .HOVERME img {
+	    -webkit-filter: blur(0);
+	    filter: blur(0);
+    }
+    .HOVERME img:hover {
+	    -webkit-filter: blur(3px);
+	    filter: blur(3px);
+	    -webkit-transition: .3s ease-in-out;
+	    transition: .3s ease-in-out;
+    }
+
+#credit {
+ 
+                    position:fixed;
+ 
+                    left:12px;
+ 
+                    bottom:6px;
+ 
+                    font-size:14px;
+                }
+
+  </style>
+  
+<!--PULSATE-->
+  <style>
+        .pulsate {
+        -webkit-animation: pulsate 3s ease-out;
+        -webkit-animation-iteration-count: infinite; 
+        opacity: 0.5;
+    }
+    @-webkit-keyframes pulsate {
+        0% { 
+            opacity: 0.5;
+        }
+        50% { 
+            opacity: 1.0;
+        }
+        100% { 
+            opacity: 0.5;
+        }
+    }
+      
+  </style>
+  
+<!--SCROLLBAR-->
+  <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 1px;
+        height: 1px;
+      }
+    
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        border-radius: 1px;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #000;
+        border-radius: 1px;
+      }
+  </style>
+
+<!--ELEMENTS-->
+  <style>
+  
+    .wrapper {
+      
+      width: 900px;
+      
+}
+    
+    .divcode {
+      max-width: 100%;
+      height: 90px;
+      overflow: scroll;
+      position: auto;
+      word-wrap: break-word;
+}
+    
+    .imgTAROT {
+      max-width: 100%;
+      position: absolute;
+      z-index: 12;
+    }
+    
+    button {
+      background-color: #fff;
+      border: solid;
+      border-color: #000;
+      border-width: 2px;
+      border-radius: 5px;
+      color: #000;
+      padding: 4px 4px;
+      text-align: center;
+      display: inline-block;
+      font-size: 12px;
+      font-family: 'Aldrich', sans-serif;
+    }
+    
+    body {
+      width: 800px;
+      margin-top: 30px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #fff;
+      color: #0d1508;
+      background-image: url('BACKGROUND IMAGE URL HERE');
+      background-size: cover;
+    }
+    
+    hr {
+      border-color: #000;
+      width: 100%;
+      border-style: dotted;
+      
+    }
+    
+    .marqueebanner {
+      width: 852px;
+      position: relative;
+      z-index: 6;
+      padding: 10px;
+      float: left;
+      
+    }
+
+      tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: #000;
+    }
+
+      .tablemain {
+        margin-left: 40px;
+        margin-right: auto;
+        display: block;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        width: 500px;
+        float: left;
+        margin-top: 80px;
+    }
+    
+      .tablemain td {
+        vertical-align: top;
+        border: none;
+        padding: 0px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        display: block;
+    }
+
+      .tablemain tr {
+        vertical-align: top;
+        border: none;
+        padding: 0px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        display: block;
+    }
+      
+      .tableside {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        width: 150px;
+        float: left;
+        margin-top: 80px;
+    }
+
+      .tableside td {
+        vertical-align: top;
+        border: none;
+        padding: 0px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        display: block;
+    }
+
+      .tableside tr {
+        vertical-align: top;
+        border: none;
+        padding: 0px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        display: block;
+    }
+    
+      .thefool {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+        border-style: outset;
+        border-width: 2px;
+        border-color: #000;
+        border-radius: 5px;
+        padding: 10px;
+        width: 150px;
+        margin: 10px 10px 10px 0px;
+    }
+      
+      .themagician {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+        border-style: outset;
+        border-width: 2px;
+        border-color: #000;
+        border-radius: 5px;
+        padding: 10px;
+        width: 150px;
+        margin: 10px 10px 10px 0px;
+    }
+    
+      .thehighpriestess {
+        width: 625px;
+        max-height: 298px;
+        overflow: auto;
+        background-color: #fff;
+        border-style: outset;
+        border-width: 2px;
+        border-color: #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 10px 10px 0px;
+    }
+    
+      .theempress {
+        width: 685px;
+        background-color: #fff;
+        border-style: outset;
+        border-width: 2px;
+        border-color: #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 10px 10px 0px;
+    }
+    
+      .thehierophant {
+        width: 873px;
+        background-color: #fff;
+        border-style: outset;
+        border-color: #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 0px; 0px; 0px; 0px;
+        position: relative;
+        float: left;
+        align: center;
+}
+
+  </style>
+    
+</head>
+
+<body>
+  <div align="center">
+<div class="wrapper">
+
+      <img src="FADING IMAGE URL HERE" style="position: absolute; z-index: 20; margin-top: 9px; margin-left: -425px;" align="center" class="pulsate"> <!--ADJUST WHERE IT IS VIA THE MARGINS-->
+      
+      <img src="HANGING IMAGE URL HERE" style="position: absolute; z-index: 20; width: 200px; margin-top: -65px; margin-left: 400px;" align="center"> <!--ADJUST WHERE IT IS VIA THE MARGINS-->
+      
+    <div class="HOVERME">
+                  
+    </div>
+      
+      <table class="tableside">
+
+        <tbody>
+
+          <tr>
+  
+            <td>
+  
+              <div class="thefool" align="center" style="font-family: 'Aldrich', sans-serif;">
+              
+                <img src="ICON IMAGE URL HERE"
+                    style="max-width: 100%;">
+                  
+                </div>
+                
+              <div class="themagician" align="center" style="font-family: 'Source Serif Pro', serif; font-size: 12px;">
+              
+                <form>
+                
+                  <select name=select size="1" 
+                    style="background-color: #fff;
+                           font size: 12pt;
+                           font-family:'VT323', monospace;
+                           color: #000;
+                           width: 150px;
+                           word-wrap: break-word;"
+                                onchange="location.href=
+                                          (form.select.options[form.select.selectedIndex].value)">
+                
+                            <option value="#">NAVIGATION TITLE</option> 
+                            <option value="/archive">THE ARCHIVE</option> <!--JUST COPY + PASTE FULL OPTION VALUE SECTION TO ADD MORE-->
+                            <option value="/server">SERVER CARRD</option>
+                            <option value="/macaron">MACARON CARRD</option>
+                
+                    </select>
+              
+                  </form>
+                  
+                </div>
+                
+              <div class="thefool" align="center" style="font-family: 'Source Serif Pro', serif;">
+              
+                <div class="divcode" style="font-size: 12px; font-family: 'Source Serif Pro', serif; text-align: justify;">
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                </div>
+
+              </div>
+
+                <div class="themagician" align="center" style="font-family: 'Source Serif Pro', serif; font-size: 12px;">
+
+                <img src="UPDATES BOX IMAGE URL" align="center"><br>
+                  
+                  <p align="justify" style="overflow: auto;
+                                            height: 150px;
+                                            padding: 4px;">
+                  
+                    <b>10.06.2023:</b> Started work on new index page..<br>
+
+                </div>
+                
+                <div class="themagician" align="center" style="font-family: 'Source Serif Pro', serif; font-size: 12px;">
+
+
+                  <audio id="music" src="SONG MP3 LINK HERE"></audio>
+
+                  <button style="font-family: 'VT323', monospace;"
+
+                          onclick="document.getElementById('music').play()">
+
+                            <marquee scrolldelay="120">
+
+                          <b>SONG TITLE</b> by SONG ARTIST
+
+                          </marquee>
+
+                  </button>
+
+              </div>
+
+            </td>
+
+            <td>
+
+        </tbody>
+
+      </table>
+
+      <table class="tablemain">
+
+        <tbody>
+
+          <tr>
+
+            <td>
+
+              <div class="thehighpriestess" align="justify" style="font-family: 'Source Serif Pro', serif; font-size: 18px;">
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+              </div>
+
+              <div class="thehighpriestess" align="justify" style="font-family: 'Source Serif Pro', serif; font-size: 18px;">
+                      
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                  
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                  
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+              </div>
+
+            <marquee scrolldelay="120" behavior="alternate">
+
+              <img src="BOUNCING MARQUEE IMAGE URL HERE" style="height: 50px;">
+
+            </marquee>
+
+            </td>
+  
+          </tr>
+  
+        </tbody>
+  
+      </table>
+
+</div>
+
+</div>
+  <div id="credit">
+ 
+                        <a href="https://cod.tumblr.com/" target="_blank" title="CODED BY JOYBOY">🦩</a>
+ 
+                    </div>
+  </body>
+</html>
