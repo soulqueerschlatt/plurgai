@@ -1,5 +1,5 @@
 body {
-  background: #f7d5f7 url("./blinkies/background.gif"); /*Replace with your own background*/
+  background: #f7d5f7 url("blinkies/background.gif"); /*Replace with your own background*/
 	font-family: "VT-100", fixedsys, System, monospace;
 	font-size: 13px;
   }
