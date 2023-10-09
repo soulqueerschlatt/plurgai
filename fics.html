@@ -1,1116 +1,336 @@
-<!-- 
-    
-    - page 'decay' by skye southcodes.tumblr.com
-    - modify as you please but please do not touch the credit
-    - any errors? need help? have questions? let me know!
-    southcodes.tumblr.com/inbox
-    
-    - normalize css by https://github.com/necolas
-    - fonts by google
-    - icon font by https://fontawesome.com/
-    - slide in by https://stackoverflow.com/a/62432099
+<!--
+3 am © xroub.tumblr.com
 
- -->
- 
+credits:
+isotope combination filtering tutorial by magnusthemes.tumblr.com
+https://phosphoricons.com/
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{title}</title>
+<title>fic recs !!</title>
+<link rel="shortcut icon" href="blinkies/url.gif">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <link rel="shortcut icon" href="{favicon}">
-    <meta name="description" content="{MetaDescription}"/>
+<script src="https://unpkg.com/phosphor-icons"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
-    <!-- normalize -->
-    <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
-    
-<style>
-:root {
-    --background:rgb(48, 44, 45);
-    --filters-background: rgb(37, 34, 35);
-    --text:#eee;
-    --links: #8cb3db;
-    --links-hover: #36608c;
-    --borders:#eee;
-    --stars: #36608c;
+<script>
+// isotope-combination-filtering
+$(document).ready(function() {
+ var $container = $(".grid");
+ var filters = {};
+ var $grid = $container.isotope({
+   itemSelector: ".item", 
+   percentPosition: true 
+ });
+
+$(".option-set a").click(function(e) {
+   var $this = $(this); 
+   var filterAttr = "data-filter-value";
+   var filterValue = $this.attr(filterAttr);
+   var $optionSet = $this.parents(".option-set");
+   var group = $optionSet.attr("data-filter-group");
+   var filterGroup = filters[group];
+   if (!filterGroup) {
+     filterGroup = filters[group] = [];
+   }
+   var $selectAll = $optionSet.find('a['+filterAttr+'=""]');
+   var activeClass = "selected",
+     exclClass = "exclusive";
+ comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+   var comboFilter = getComboFilter(filters);
+   $grid.isotope({
+     filter: comboFilter
+   });
+   $this.toggleClass(activeClass);
+   e.preventDefault();
+ });
+});
+
+// DARK MODE
+window.addEventListener("DOMContentLoaded", function() {
+const btn = document.querySelector(".lightswitch");
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "dark") {
+document.body.classList.add("night");
 }
- 
-* {box-sizing:  border-box;}
 
-.tmblr-iframe {margin:.7rem;opacity:.6;-ms-transform: scale(0.85);-webkit-transform: scale(0.85); /* Safari */transform: scale(0.85);}
-.tmblr-iframe:hover {opacity:.8;}
+btn.addEventListener("click", function () {
+document.body.classList.toggle("night");
 
-::-webkit-scrollbar-thumb:vertical {border-left:2px solid var(--links);}
-::-webkit-scrollbar {width:6px}
-::-webkit-scrollbar-track-piece{margin:5px 0;}
+let theme = "light";
+if (document.body.classList.contains("night")) {
+theme = "dark";
+}
+localStorage.setItem("theme", theme);
+});
+});
+</script>
 
-pre {font-family:consolas;
-    white-space: pre-wrap;       /* css-3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4- */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;}      /* Internet Explorer 5.5+ */
+<style>
+/* CHANGE THE COLORS HERE */
+:root {
+--bg: #f0f0f0;
+--font: #222222;
+--header: #ffffff;
+--box: #ffffff;
+--borders: #dddddd;
+--accent: #958799;
 
-body, figure{margin:0;padding:0}
-html{font: 14px 'Karla', sans-serif;}
-body {font-size:14px;color:var(--text);background:var(--background);}
-a {text-decoration: none;color:var(--links);word-break:break-word;}
-a:hover {color:var(--links-hover);}
-blockquote {margin:0;padding:0;}
-img {max-width:100%;height: auto;display: block;margin: .7rem 0}
-hr {border:0;border-top:1px solid var(--borders);margin:0;}
+/* dark mode colors */
+--drk-bg: #222831;
+--drk-font: #f0f0f0;
+--drk-accent: #6c5b78;
+--drk-header: #393e46;
+--drk-box: #393e46;
+--drk-borders: #16181c;
+}
 
-/* header */
+body {
+margin: 0;
+background: var(--bg);
+background-image: url('blinkies/background.gif');
+font-family: 'Trebuchet MS', sans-serif;
+font-size: 14px;
+color: var(--font);
+line-height: 150%;
+word-wrap: break-word;
+transition: all 0.4s;
+}
+
+/* DARK MODE STYLING */
+body.night {background: var(--drk-bg); color: var(--drk-font);}
+body.night {background-image: url('blinkies/background.gif');}
+body.night a {color: var(--drk-accent);}
+
+body.night .links a, body.night .filters {background: var(--drk-header);}
+body.night .filters a {color:var(--drk-font);}
+
+body.night .links a, body.night .filters, body.night .grid .item {
+border: 1px solid var(--drk-borders);}
+
+body.night .item {background: var(--drk-box);}
+body.night .item a {background: var(--drk-accent); color: var(--drk-font);}
+
+body.night .item a:hover {color: var(--drk-font); background: transparent; border: 1px solid var(--drk-accent);}
+
+a {
+text-decoration: none;
+color: var(--accent);
+transition: all 0.4s;
+-webkit-transition: all 0.4s;
+-moz-transition: all 0.4s;
+-ms-transition: all 0.4s;
+-o-transition: all 0.4s;
+}
 
 header {
-    width: calc(100vw - 15rem);
-    max-width: 50rem;
-    margin:5rem 0 0 15rem;
-    padding:0 4rem
+width: 75%;
+margin: 50px auto 25px;
+display: flex;
+justify-content: center;
 }
 
-/* title */
-
-#page-title {
-    vertical-align: middle;
-    display: inline-block;
-    margin-left: 2rem;
-    font:500 1.7rem 'Karla', sans-serif
+img.avtr {
+width: 125px;
+height: 125px;
+border-radius: 8px;
 }
 
-/* image */
-
-.header-image {
-    width: 7rem;
-    height: 7rem;
-    border-radius: 5px;
-    object-fit: cover;
-    margin:0;
-    vertical-align: middle;
-    display: inline-block;
+.links a, .filters {
+background: var(--header);
+border: 1px solid var(--borders);
+border-radius: 8px;
 }
 
-/* description */
+.links {margin: 0 15px;}
 
-#description {
-    margin-top: 3rem;
+.links a {
+background: var(--header);
+border: 1px solid var(--borders);
+border-radius: 5px;
+padding: 8px;
+font-size: 18px;
+display: flex;
+margin-bottom: 10px;
 }
 
-/* navigation */
-
-#header-navigation {margin-top: 3rem;}
-#header-navigation *{
-    list-style: none;
-    margin:0;padding: 0;
+.links a:hover {
+color: var(--header);
+background: var(--accent);
 }
 
-#header-navigation li {
-    margin-right:3rem;
-    display: inline-block;
-    font-weight: 600;
+.filters {
+width: calc(100% - 130px - 1.25em - 35px);
+height: 100%;
+max-height: 120px;
+padding: 4px 10px;
+overflow: scroll;
 }
 
-/* wrapper */
+.filters ul {padding:0;}
+.filters li {list-style-type: none; display: inline-block;}
+.filters li a {color: var(--font); margin: 0 5px;}
+.filters ul b {margin: 0 5px;}
+.selected {font-weight: bold; border-bottom: 2px solid var(--accent);}
 
-#container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+/* content */
+.grid {
+width: 90%;
+height: calc(100vh - 230px);
+margin: 0 auto 25px;
 }
 
-/* filters sidebar */
-
-#hamburger-checkbox {display: none;}
-.hamburger {display: none;}
-
-#hamburger-checkbox:checked~#filters-navigation {
-    transition: 2s ease;
-    transform: translateX(0px);
+.grid .item {
+display: block;
+background: var(--box);
+width: 31%;
+box-sizing: border-box;
+padding: 10px;
+margin: 1%;
+border: 1px solid var(--borders);
+border-radius: 5px;
 }
 
-figure.filters-image {
-    width:5rem;
-    height: 5rem;
-    margin:3rem auto;
+.item h2 {margin: 0 0 5px;}
+
+.item a {
+display: block;
+text-align: center;
+background: var(--accent);
+color: var(--font);
+padding: 6px 8px;
+margin: 0 auto;
+border-radius: 3px;
+border: 1px solid var(--accent);
 }
 
-img.filters-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    margin:auto;
-    border-radius: 100%;
-    object-fit:cover
-}
-    
-#filters-navigation {
-    width: 13rem;
-    height: 100vh;
-    position: fixed;top:0;bottom:0;left:0;
-    transition: 2s ease;
-    overflow: auto;
-    padding:  2rem;
-    background-color: var(--filters-background);
-    border-right: 1px solid var(--borders);
+.item a:hover {
+background: transparent;
+color: var(--font);
+border: 1px solid var(--accent);
 }
 
-.button-group button {
-    display: block;
-    border: 0;
-    background-color: transparent;
-    padding: 0;
-    margin:1rem 0 0;
-    font-family: 'Karla', sans-serif!important;
-    color:var(--text);
-    text-align:left;
-    line-height:155%;
+/* credit: DO NOT TOUCH */
+.crd {
+position: fixed;
+bottom: 15px;
+right: 15px;
 }
 
-.button-group {
-    margin: 0 0 4rem;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid var(--borders);
+/* tumblr controls by magnusthemes */
+.iframe-controls--desktop {
+position: fixed;
+top: 0px; right: 0px;
+z-index: 214748364789123456789;
+-webkit-transform:scale(0.6,0.6);
+-webkit-transform-origin: 100% 0%;
+-ms-transform-origin:100% 0%;
+-ms-transform:scale(0.6,0.6);
+transform:scale(0.6,0.6);
+transform-origin:100% 0%;
 }
 
-.button-group:last-of-type {
-    border-bottom: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.iframe-controls--phone-mobile {display:none!important;}
+.tmblr-iframe-pushdown {padding-top:0!important;} 
+.tmblr-iframe--app-cta-button {display:none!important;}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media only screen and (max-width: 720px) {
+header {width: 92%;}
+.filters {width: calc(100% - 130px - 1.25em - 80px);}
+.grid .item {width: 48%; display: inline-block;}
 }
 
-.button-group h3 {
-    text-transform: uppercase;
-    margin:0rem 0 2rem;
+@media only screen and (max-width: 600px) {
+.grid .item {width: 100%; display: inline-block; margin: 1% 0;}
 }
-
-.button-group button:before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: var(--links);
-    content: '\f111';
-    margin-right: 1rem;
-    font-size: .5rem;
-}
-
-.button-group button:focus {outline: 0;}
-
-.is-checked {
-    color:var(--links)!important;
-    font-weight: 700;
-    transition-duration: .2s;
-}
-
-/* boxes */
-
-#main {
-    width: calc(100vw - 15rem);
-    padding: 3rem 0;
-    box-sizing: border-box;
-}
-
-.fanfic-box {
-    width: calc(50% - 8rem);
-    margin: 5rem 4rem;
-}
-
-.upper-section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-figure.fanfic-image {
-    width:5rem;
-    height: 5rem;
-}
-
-img.fanfic-image {
-    width:100%;
-    height:100%;
-    object-fit: cover;
-    display: block;
-    margin:0;
-    border-radius: 5px;
-}
-
-.title-author,.star-rating {
-    overflow: auto;
-    height: 5rem;
-    flex-grow: 1;
-}
-
-.title-author {
-    padding:.8rem .9rem;
-    width: calc(70% - 5rem);
-}
-
-.title {
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.author {
-    font-size:.9rem;
-    margin-top: 1rem;
-    font-style: italic;
-    letter-spacing: .05rem;
-    text-decoration: underline;
-}
-
-.author a{color:var(--text)}
-
-.star-rating {
-    width: 30%;
-    text-align: right;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.star-rating i{
-    font-size: .8rem;
-}
-
-.one-stars .fa-star:nth-of-type(1),
-.two-stars .fa-star:nth-of-type(-n+2),
-.three-stars .fa-star:nth-of-type(-n+3),
-.four-stars .fa-star:nth-of-type(-n+4),
-.five-stars .fa-star:nth-of-type(-n+5)
-{
-    color:var(--stars);
-}
-
-.ship-and-fandom {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 2rem 1rem;
-    text-transform: uppercase;
-    letter-spacing: .04rem;
-}
-
-.ship,.fandom {
-    width: 50%;
-    flex-grow: 1;
-}
-
-.fandom {text-align: right;}
-
-.fanfic-summary {margin:1rem 0}
-
-.fanfic-links {
-    font-size: 1.1rem;
-    font-weight: 700;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--borders);
-}
-
-.fanfic-info {
-    padding-top: 1.5rem;
-    margin-top: 1.5rem;
-    border-top: 1px solid var(--borders);
-}
-
-.fanfic-info li {display: inline-block;}
-
-.fanfic-info li:after {
-    content: '|';
-    margin:0 1rem
-}
-
-.fanfic-info li:last-of-type:after {
-    content: '';
-    margin:0
-}
-.fanfic-info b {font-size: 1.1rem;}
-
-.fanfic-series {
-    text-transform: uppercase;
-    font-weight: 600;
-    text-align: center;
-    margin:2rem 0
-}
-
-.fanfic-series a{text-decoration: underline;}
-
-.fanfic-triggers {margin:1rem 0 0;}
-
-.fanfic-triggers li {
-    display: inline-block;
-    margin-right: 1rem;
-}
-
-.fa-triangle-exclamation {
-    margin-right:1rem;
-    color:yellow
-}
-
-/* medias */
-
-@media only screen and (min-width:0px) and (max-width:650px) {
-    
-    .fanfic-box {
-        width: calc(100% - 4rem);
-        margin: 5rem 2rem;
-    }
-}
-
-
-@media only screen and (min-width:651px) and (max-width:800px) {
-
-    .fanfic-box {
-        margin:5rem 2rem;
-        padding:0;
-        width: calc(50% - 4rem);
-    }
-
-}
-
-@media only screen and (min-width:0px) and (max-width:900px) {
-
-    .hamburger {display: block;}
-
-    .hamburger .fa-filter {
-        font-size: 1.7rem;
-        z-index: 9999999999999!important;
-        cursor:pointer;
-        position: fixed;top:1.7rem;left:1.7rem;
-        background-color: var(--filters-background);
-        padding: .9rem;
-        border-radius: 7px;
-    }
-
-    header {
-        width: 90%;
-        max-width: 100%;
-        margin: 10rem auto 0;
-        padding: 0;
-    }
-
-    #filters-navigation {
-        z-index: 9999999!important;
-        transform: translateX(-13rem);
-        box-sizing: border-box;
-        padding: 4rem 2rem 2rem;
-    }
-
-    #main {
-        width: 100%;
-        margin:auto;
-        padding: 3rem 0;
-        box-sizing: border-box;   
-    }
-
-}
-
-@media only screen and (min-width:2001px) and (max-width:99999999999px) {
-
-    .fanfic-box {
-        width: calc(33% - 8rem);
-        margin: 5rem 4rem;
-        flex-grow: 1;
-    }
-    
-}
-
 </style>
-
 </head>
 <body>
-
 <header>
+<img src="{PortraitURL-128}" class="avtr">
 
-    <!-- header image -->
-    <img src="IMAGE URL"  class="header-image">
-    
-    <!-- title -->
-    <h1 id="page-title">title</h1>
-    
-    <!-- description -->
-    <article id="description">
-        description
-    </article>
+<div class="links">
+<a href=""><i class="ph-house-fill"></i></a>
+<a href="/ask"><i class="ph-envelope-fill"></i></a>
+<a class="lightswitch"><i class="ph-moon-fill"></i></a>
+</div>
 
-    <nav id="header-navigation"><ul>
-        
-        <!-- links -->
-        <li><a href="/">index</a></li>
-        
-        <li><a href="/ask">inbox</a></li>
-        
-        <li><a href="">link 1</a></li>
+<!-- FILTERS -->
 
-        <li><a href="">link 2</a></li>
-    </ul></nav>
-    
+<!-- you will notice that each group has the class "exclusive" after "filter option-set". this means that you can ONLY pick ONE filter from this group. if you would like to get rid of that, delete ONLY "exclusive".
+
+I have written up a simple filter template for anyone who needs/wants it. To change the filters tags, only replace the sample tag, that complete directly after "data-filter-value" with whatever you want. Example: "complete" to "whatever". IF you don't know what it is, Don't delete it.
+
+To change the group and individual filter names, find the example name "Group One" and "Completed" with whatever you want. -->
+
+<div class="filters">
+
+<ul class="filter option-set exclusive" data-filter-group="gen">
+<li class="filter option-set exclusive"><a href="#" data-filter-value="" class="reset selected">All</a></li> <!-- IMPROTANT! make sure not to delete! -->
+<li class="filter option-set exclusive"><a href="#" data-filter-value=".fave">Favorites</a></li>
+</ul>
+
+<ul class="filter option-set exclusive" data-filter-group="status">
+<li><b>Group One:</b></li>
+<li><a href="#" data-filter-value="" class="selected">All</a></li>
+<li><a href="#" data-filter-value=".completed">Completed</a></li>
+<li><a href="#" data-filter-value=".incomplete">Incomplete</a></li>
+<li><a href="#" data-filter-value=".ongoing">In Progress</a></li>
+</ul>
+
+<ul class="filter option-set exclusive" data-filter-group="rating">
+<li><b>Group Two:</b></li>
+<li><a href="#" data-filter-value="" class="selected">All</a></li>
+<li><a href="#" data-filter-value=".general">General</a></li>
+<li><a href="#" data-filter-value=".teen">Teen</a></li>
+<li><a href="#" data-filter-value=".mature">Mature</a></li>
+<li><a href="#" data-filter-value=".explicit">Explicit</a></li>
+</ul>
+</div>
 </header>
+<!-- HEADER ENDS -->
 
+<!-- GRID STARTS -->
+<section class="grid">
+<!-- to add more filters put in the tag after "item". make sure NOT to delete the item class. IMPORTANT! -->
 
-<section id="container">
+<!-- COPY FROM HERE -->
+<div class="item .explicit .completed">
+<h2>Ptolemaea</h2>
+<i>anonymous</i>
+<p><b>Word count: </b> 879</p>
+<p><b>Summary: </b> he uncovers the tarp over schlatt’s graverobbed coffin where he’s resting, sealed in a cloud. through the panes of quackity’s reflection he lies still, preserved at a point in time.</p>
 
-<section id="filters-sidebar">
-<input type="checkbox" id="hamburger-checkbox"><label class="hamburger" for="hamburger-checkbox"><i class="fa-solid fa-filter"></i></label>
+<p>it makes a lovely frame, black against pale in black. one red baby rose in his chest pocket.</p>
 
+<p>(a gift, he is, rotting from the inside.)</p>
+	Warnings: Necro.<br>
+	Ship: Pumpkin Duo.
+<a href="https://archiveofourown.org/works/47642374">Link</a>
+</div>
 
-<nav id="filters-navigation">
+<div class="item .general .completed">
+<h2>Everyone Has Hidden Regression Aparently</h2>
+<i>CharlieIsMuppets</i>
+<p><b>Word count: </b> 4,689</p>
+<p><b>Summary: </b> Charlie hates his coping mechanism. Schlatt helps him see that it’s healthy and perfectly valid.</p>
 
-        <figure class="filters-image">
-			<!-- filters image -->
-            <img src="IMAGE URL"  class="filters-image">
-        </figure>
-
-        
-    <!-- - TO CUSTOMIZE FILTERS PLEASE SEE THIS TUTORIAL, SCROLL DOWN TO "FILTER BY MULTIPLE CRITERIA": https://hendrixrph-blog.tumblr.com/post/131707989334/under-the-cut-is-a-tutorial-on-how-to-create-a -->
-   
-
-            <div class="button-group" data-filter-group="stars">
-                <h3>by stars</h3>
-
-                <button class="button is-checked" data-filter="">all</button>
-                <button class="button" data-filter=".one-stars">one</button>
-                <button class="button" data-filter=".two-stars">two</button>
-                <button class="button" data-filter=".three-stars">three</button>
-                <button class="button" data-filter=".four-stars">four</button>
-                <button class="button" data-filter=".five-stars">five</button>
-            </div>
-
-            <div class="button-group" data-filter-group="UNIQUE ID">
-                <h3>filter title</h3>
-
-                <button class="button is-checked" data-filter="">all</button>
-                <button class="button" data-filter=".class-1">class-1</button>
-                <button class="button" data-filter=".class-1">class-2</button>
-            </div>
-            
-
-            
-    </nav>
-
+<p>Or: Charlie regresses secretly, but Schlatt finds out and becomes his caregiver.</p>
+<a href="https://archiveofourown.org/works/47739556">Link</a>
+</div>
+<!-- TO HERE AND PASTE AS NEEDED -->
 </section>
-<!-- filters end -->
-
-<main id="main">
-
-    <!-- fanfic box start -->
-    
-    <!-- don't forget to add the corresping class for the scores! (.one-stars / .two-stars / .three-stars / etc)  -->
-    <section class="fanfic-box five-stars">
-
-        <article class="upper-section">
-
-            <figure class="fanfic-image">
-                <!-- fanfic image -->
-                <img src="IMAGE URL"  class="fanfic-image">
-            </figure>
-
-            <article class="title-author">
-
-                <!-- fanfic title -->
-                <div class="title">
-                    <a target="_blank" href="fic link">title</a>
-                </div>
-
-                <!-- fanfic author -->
-                <div class="author"><a target="_blank" href="author link">author</a></div>
-
-            </article>
-
-            <article class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </article>
-
-        </article>
-        
-        <article class="ship-and-fandom">
-
-            <!-- ship -->
-            <div class="ship">ship</div>
-
-            <!-- fandom -->
-            <div class="fandom">fandom</div> 
-        </article>
-
-        <article class="fanfic-summary">
-
-            <!-- fanfic summary -->
-            
-            Summary
-
-        </article>
-
-        <article class="fanfic-links">
-
-            <!-- fic links -->
-            read on <a target="blank" href="LINK">link</a>
-        </article>
-
-        <article class="fanfic-info">
-
-            <!-- details -->
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-
-        </article>
-
-        <article class="fanfic-series">
-            <!-- if part of a series -->
-            <a href="series link">series name</a> 
-        </article>
-
-        <article class="fanfic-triggers">
-
-            <!-- triggers -->
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 1</li>
-            
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 2</li>
-        </article>
-    
-    </section>
-    <!-- fanfic box end -->
-    
-    <section class="fanfic-box five-stars">
-
-        <article class="upper-section">
-
-            <figure class="fanfic-image">
-                <!-- fanfic image -->
-                <img src="IMAGE URL"  class="fanfic-image">
-            </figure>
-
-            <article class="title-author">
-
-                <!-- fanfic title -->
-                <div class="title">
-                    <a target="_blank" href="fic link">title</a>
-                </div>
-
-                <!-- fanfic author -->
-                <div class="author"><a target="_blank" href="author link">author</a></div>
-
-            </article>
-
-            <article class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </article>
-
-        </article>
-        
-        <article class="ship-and-fandom">
-
-            <!-- ship -->
-            <div class="ship">ship</div>
-
-            <!-- fandom -->
-            <div class="fandom">fandom</div> 
-        </article>
-
-        <article class="fanfic-summary">
-
-            <!-- fanfic summary -->
-            
-            Summary
-
-        </article>
-
-        <article class="fanfic-links">
-
-            <!-- fic links -->
-            read on <a target="blank" href="LINK">link</a>
-        </article>
-
-        <article class="fanfic-info">
-
-            <!-- details -->
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-
-        </article>
-
-        <article class="fanfic-series">
-            <!-- if part of a series -->
-            <a href="series link">series name</a> 
-        </article>
-
-        <article class="fanfic-triggers">
-
-            <!-- triggers -->
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 1</li>
-            
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 2</li>
-        </article>
-    
-    </section>
-    <!-- fanfic box end -->
-    
-    <section class="fanfic-box five-stars">
-
-        <article class="upper-section">
-
-            <figure class="fanfic-image">
-                <!-- fanfic image -->
-                <img src="IMAGE URL"  class="fanfic-image">
-            </figure>
-
-            <article class="title-author">
-
-                <!-- fanfic title -->
-                <div class="title">
-                    <a target="_blank" href="fic link">title</a>
-                </div>
-
-                <!-- fanfic author -->
-                <div class="author"><a target="_blank" href="author link">author</a></div>
-
-            </article>
-
-            <article class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </article>
-
-        </article>
-        
-        <article class="ship-and-fandom">
-
-            <!-- ship -->
-            <div class="ship">ship</div>
-
-            <!-- fandom -->
-            <div class="fandom">fandom</div> 
-        </article>
-
-        <article class="fanfic-summary">
-
-            <!-- fanfic summary -->
-            
-            Summary
-
-        </article>
-
-        <article class="fanfic-links">
-
-            <!-- fic links -->
-            read on <a target="blank" href="LINK">link</a>
-        </article>
-
-        <article class="fanfic-info">
-
-            <!-- details -->
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-
-        </article>
-
-        <article class="fanfic-series">
-            <!-- if part of a series -->
-            <a href="series link">series name</a> 
-        </article>
-
-        <article class="fanfic-triggers">
-
-            <!-- triggers -->
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 1</li>
-            
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 2</li>
-        </article>
-    
-    </section>
-    <!-- fanfic box end -->
-    
-    <section class="fanfic-box five-stars">
-
-        <article class="upper-section">
-
-            <figure class="fanfic-image">
-                <!-- fanfic image -->
-                <img src="IMAGE URL"  class="fanfic-image">
-            </figure>
-
-            <article class="title-author">
-
-                <!-- fanfic title -->
-                <div class="title">
-                    <a target="_blank" href="fic link">title</a>
-                </div>
-
-                <!-- fanfic author -->
-                <div class="author"><a target="_blank" href="author link">author</a></div>
-
-            </article>
-
-            <article class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </article>
-
-        </article>
-        
-        <article class="ship-and-fandom">
-
-            <!-- ship -->
-            <div class="ship">ship</div>
-
-            <!-- fandom -->
-            <div class="fandom">fandom</div> 
-        </article>
-
-        <article class="fanfic-summary">
-
-            <!-- fanfic summary -->
-            
-            Summary
-
-        </article>
-
-        <article class="fanfic-links">
-
-            <!-- fic links -->
-            read on <a target="blank" href="LINK">link</a>
-        </article>
-
-        <article class="fanfic-info">
-
-            <!-- details -->
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-
-        </article>
-
-        <article class="fanfic-series">
-            <!-- if part of a series -->
-            <a href="series link">series name</a> 
-        </article>
-
-        <article class="fanfic-triggers">
-
-            <!-- triggers -->
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 1</li>
-            
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 2</li>
-        </article>
-    
-    </section>
-    <!-- fanfic box end -->
-    
-    <section class="fanfic-box five-stars">
-
-        <article class="upper-section">
-
-            <figure class="fanfic-image">
-                <!-- fanfic image -->
-                <img src="IMAGE URL"  class="fanfic-image">
-            </figure>
-
-            <article class="title-author">
-
-                <!-- fanfic title -->
-                <div class="title">
-                    <a target="_blank" href="fic link">title</a>
-                </div>
-
-                <!-- fanfic author -->
-                <div class="author"><a target="_blank" href="author link">author</a></div>
-
-            </article>
-
-            <article class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </article>
-
-        </article>
-        
-        <article class="ship-and-fandom">
-
-            <!-- ship -->
-            <div class="ship">ship</div>
-
-            <!-- fandom -->
-            <div class="fandom">fandom</div> 
-        </article>
-
-        <article class="fanfic-summary">
-
-            <!-- fanfic summary -->
-            
-            Summary
-
-        </article>
-
-        <article class="fanfic-links">
-
-            <!-- fic links -->
-            read on <a target="blank" href="LINK">link</a>
-        </article>
-
-        <article class="fanfic-info">
-
-            <!-- details -->
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-
-        </article>
-
-        <article class="fanfic-series">
-            <!-- if part of a series -->
-            <a href="series link">series name</a> 
-        </article>
-
-        <article class="fanfic-triggers">
-
-            <!-- triggers -->
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 1</li>
-            
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 2</li>
-        </article>
-    
-    </section>
-    <!-- fanfic box end -->
-    
-    <section class="fanfic-box five-stars">
-
-        <article class="upper-section">
-
-            <figure class="fanfic-image">
-                <!-- fanfic image -->
-                <img src="IMAGE URL"  class="fanfic-image">
-            </figure>
-
-            <article class="title-author">
-
-                <!-- fanfic title -->
-                <div class="title">
-                    <a target="_blank" href="fic link">title</a>
-                </div>
-
-                <!-- fanfic author -->
-                <div class="author"><a target="_blank" href="author link">author</a></div>
-
-            </article>
-
-            <article class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </article>
-
-        </article>
-        
-        <article class="ship-and-fandom">
-
-            <!-- ship -->
-            <div class="ship">ship</div>
-
-            <!-- fandom -->
-            <div class="fandom">fandom</div> 
-        </article>
-
-        <article class="fanfic-summary">
-
-            <!-- fanfic summary -->
-            
-            Summary
-
-        </article>
-
-        <article class="fanfic-links">
-
-            <!-- fic links -->
-            read on <a target="blank" href="LINK">link</a>
-        </article>
-
-        <article class="fanfic-info">
-
-            <!-- details -->
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-
-        </article>
-
-        <article class="fanfic-series">
-            <!-- if part of a series -->
-            <a href="series link">series name</a> 
-        </article>
-
-        <article class="fanfic-triggers">
-
-            <!-- triggers -->
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 1</li>
-            
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 2</li>
-        </article>
-    
-    </section>
-    <!-- fanfic box end -->
-    
-    <section class="fanfic-box five-stars">
-
-        <article class="upper-section">
-
-            <figure class="fanfic-image">
-                <!-- fanfic image -->
-                <img src="IMAGE URL"  class="fanfic-image">
-            </figure>
-
-            <article class="title-author">
-
-                <!-- fanfic title -->
-                <div class="title">
-                    <a target="_blank" href="fic link">title</a>
-                </div>
-
-                <!-- fanfic author -->
-                <div class="author"><a target="_blank" href="author link">author</a></div>
-
-            </article>
-
-            <article class="star-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </article>
-
-        </article>
-        
-        <article class="ship-and-fandom">
-
-            <!-- ship -->
-            <div class="ship">ship</div>
-
-            <!-- fandom -->
-            <div class="fandom">fandom</div> 
-        </article>
-
-        <article class="fanfic-summary">
-
-            <!-- fanfic summary -->
-            
-            Summary
-
-        </article>
-
-        <article class="fanfic-links">
-
-            <!-- fic links -->
-            read on <a target="blank" href="LINK">link</a>
-        </article>
-
-        <article class="fanfic-info">
-
-            <!-- details -->
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-            <li><b>detail:</b> content</li>
-
-        </article>
-
-        <article class="fanfic-series">
-            <!-- if part of a series -->
-            <a href="series link">series name</a> 
-        </article>
-
-        <article class="fanfic-triggers">
-
-            <!-- triggers -->
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 1</li>
-            
-            <li><i class="fa-solid fa-triangle-exclamation"></i>trigger 2</li>
-        </article>
-    
-    </section>
-    <!-- fanfic box end -->
-    
-
-</main>
-
-
-</section> <!-- flex container wrapper -->
-
-<div style="position:fixed;bottom:2rem;right:2rem;font-size:.85rem"><a target="_blank" href="https://southcodes.tumblr.com/">SC</a></div>
-
-
-<!-- scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!-- icon font -->
-<script src="https://kit.fontawesome.com/0993e30c04.js" crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
- 
-<script type="text/javascript">
-    $(document).ready( function() {
-     // init Isotope
-     var $grid = $('#main').isotope({
-       itemSelector: '.fanfic-box'
-     });
-     // store filter for each group
-     var filters = {};
-     
-     $('#filters-navigation').on( 'click', '.button', function() {
-       var $this = $(this);
-       // get group key
-       var $buttonGroup = $this.parents('.button-group');
-       var filterGroup = $buttonGroup.attr('data-filter-group');
-       // set filter for group
-       filters[ filterGroup ] = $this.attr('data-filter');
-       // combine filters
-       var filterValue = concatValues( filters );
-       // set filter for Isotope
-       $grid.isotope({ filter: filterValue });
-     });
-     
-     // change is-checked class on buttons
-     $('.button-group').each( function( i, buttonGroup ) {
-       var $buttonGroup = $( buttonGroup );
-       $buttonGroup.on( 'click', 'button', function() {
-         $buttonGroup.find('.is-checked').removeClass('is-checked');
-         $( this ).addClass('is-checked');
-       });
-     });
-     
-    });
-    // flatten object by concatting values
-    function concatValues( obj ) {
-     var value = '';
-     for ( var prop in obj ) {
-       value += obj[ prop ];
-     }
-     return value;
-    }
-    </script>
+<!-- GRID ENDS -->
+<!-- credit: DO NOT TOUCH -->
+<a href="https://enbythemes.tumblr.com" class="crd" title="code by rou"><i class="ph-sketch-logo"></i></a>
 </body>
 </html>
