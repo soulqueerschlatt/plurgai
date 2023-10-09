@@ -1,229 +1,791 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>serversona info !!</title>
-    <link rel="icon" href="macaron assets/images/image32.png">
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-    <link href="macaron/garbage.css" rel="stylesheet" type="text/css" media="all">
-  </head>
-  <body>
-  <div class=sidebar-group>
-    <div class=sidebar>
-    <div class=title-bar>intro! <div class=right>x</div></div>
-    <div class=inner>
-      <img src="macaron assets/images/image04.gif">
-      You can call us Schlatt or Nathaniel. We're Schlatt IRL, a Furry, Evian & Ficto MAP, and a certified traumaphile.<br>
+<head>
+<title>about !!</title>
 
-Plural. Our internal server is full of consang, and we're an aego + plural paraphiliac. An aromantic aplatonic queer object.<br>
+<link rel="icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-We're a Hermaphrodite/Androgynos, and don't call us nonbinary! Extrabinary is fine. We're Omnigender.
-
-    </div></div>
-
-  <div class=sidebar-box>
-  <div class=mini-sidebar><div class=title-bar>Profile <div class=right>x</div></div><div class=inner><br>
-  
-  <center><img src="macaron assets/images/image03.jpg" class=icon height=100px width=100px></center>
-  <p>the fagdyke hermaphrodite of your dreams.</p>
+<!--
+    MACCHIATO PAGE BY ACE
+    — do not use as a base code or steal any part of this code
+    — do not touch the credit or claim as your own
     
+    — phosphor icons // https://phosphoricons.com
+    — tippy.js tooltips by atomiks // https://atomiks.github.io/tippyjs
+    — google fonts // https://fonts.google.com
+-->
+
+<!-- SCRIPTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;1,300&family=Spirax&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/phosphor-icons"></script>
+
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+
+
+<style type="text/css">
+ 
+/*-- COLOURS — EDIT HERE --*/
+:root {
+  --background: #f5f5f5;
+  --background-image: url('blinkies/background.gif');
+  --content-background: #fff;
+  --text: #808080;
+  --link-hover: #BD9879;
+  --accent: #D8AE8A;
+  --title: #BD9879;
+ 
+/*-- FONT --*/
+  --body-font: 'Montserrat', sans-serif;
+  --font-size: 13px;
+
+}
+
+@keyframes lazyload {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+ 
+@-webkit-keyframes lazyload {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+ 
+@-moz-keyframes lazyload {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+ 
+@-o-keyframes lazyload {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--font-size);
+    color: var(--text);
+    background-color: var(--background);
+    text-align: left;
+    word-wrap: break-word;
+    letter-spacing: 0.04em;
+    line-height: 160%;
+    margin: 0:
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-animation: lazyload 2s;
+    -moz-animation: lazyload 2s;
+    -o-animation: lazyload 2s;
+    animation: lazyload 2s;
+}
+
+/*-- SCROLLBAR --*/
+::-webkit-scrollbar {
+    width: 8px; 
+    height: 20px;
+    background-color: var(--background);
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    min-height: 35px;
+    min-width: 35px;
+    border-radius: 10px;
+}
+
+/*-- TOOLTIPS --*/
+.tippy-tooltip.custom-theme {
+    background-color: var(--content-background);
+    color: var(--title);
+    text-align: center;
+    font-family:'Montserrat';
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-style: normal;
+    font-size: 0.9em;
+    padding: 0.25em;
+    margin-left:20px;
+    border-radius:10px;
+    border: 1px solid var(--accent)
+}
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+    z-index: 999999999!important;
+    opacity:0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+ 
+.tmblr-iframe-compact .tmblr-iframe--unified-controls:hover {
+    opacity:1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+/*-- COMMON --*/
+a {
+    color: var(--accent); 
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+blockquote {
+    padding: 0 0 0 1.25em;
+    border-left: 1px solid var(--accent);
+    margin: 1.25em 0 1.25em 1.25em;
+}
+
+h1, h2, h3, h4, h5, .title {
+    color: var(--title);
+    letter-spacing: 0.06em;
+    font-weight: bold;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, .title a {color: var(--title);}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, .title a:hover {color: var(--accent);}
+h1, .title {font-size: 1.75em;}
+h2 {font-size: 1.5em;}
+h3 {font-size: 1.35em;}
+h4 {font-size: 1.25em;}
+h5 {font-size: 1.15em;}
+
+small {font-size: 0.9em;}
+big {font-size: 1.1em;}
+b, bold, strong {color: var(--title)}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+blockquote {
+    padding-left:1em;
+    border-left: 1px solid var(--accent);
+    margin: 1em 0 1em 1em;
+}
+
+li {
+    list-style-type:circle;
+}
+li::marker {
+    color:var(--accent);
+}
+
+em {
+    font-weight:500;
+}
+
+.subtitle {
+    text-align:center;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size:1.3em;
+    color:var(--title);
+    font-weight:bold;
+    font-size:20px;
+    text-transform:uppercase;
+}
+
+/*-- CREDIT — DO NOT TOUCH --*/
+#credit {
+    font-family: "Phosphor";
+    font-size: 22px;
+    text-align:center;
+    padding: 11px;
+    border-radius: 10px;
+    background-color: var(--content-background);
+    color: var(--accent);
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+}
+ 
+#credit:hover {color: var(--title);}
+
+/*-- CONTENT --*/
+#main {
+    position:relative;
+    margin:auto;
+    width:950px;
+    z-index:999999;
+}
+
+/*-- TOP --*/
+#top {
+    position:absolute;
+    width:950px;
+    height:145px;
+    background-color:var(--content-background);
+    margin-top:30px;
+    border-radius:25px;
+    z-index:999999;
+}
+
+#content {
+    position:relative;
+    width:40%;
+    margin:36px auto;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.icon {
+    top:50%;
+    transform:translateY(-50%);
+    position:absolute;
+}
+
+.icon img {
+    height:85px;
+    width:85px;
+    border-radius:50%;
+}
+
+.title {
+    position:relative;
+    margin-left:110px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--title)
+}
+
+.links {
+    position:relative;
+    display: inline-block;
+    margin-top:10px;
+    margin-left:111px;
+}
+
+.links a {
+    display:inline;
+    padding-right:10px;
+    letter-spacing:0.5px;
+    text-transform:lowercase;
+    font-size:13px;
+    font-weight:500;
+}
+
+.links #nav li {
+    display:inline-block;
+    word-break:break-word;
+    padding-right:0.5em;
+    padding-right:0.5em;
+}
+
+.links #nav li:not(:last-child):after {
+    content:'•';
+    color:var(--accent);
+    font-weight:bold;
+}
+
+/*-- INFO --*/
+.container{
+    background:none;
+    width:38%;
+    margin-top:197px;
+    padding:10px 20px 10px 20px;
+    box-sizing:border-box;
+    float:left;
+}
+
+#info {
+    letter-spacing:.1em;
+    float:left;
+}
+
+#info li {
+    margin:15px 0px 15px 10px;
+    list-style-type:none;
+}
+
+#info i {
+    font-size:23px;
+    color:var(--accent);
+}
+
+#info span {
+    position:absolute;
+    display:inline-block;
+    margin-left:20px;
+    color:var(--text);
+}
+
+/*-- SOCIALS --*/
+#socials {
+    position:inline-block;
+    letter-spacing:.1em;
+    text-align:center;
+    margin-top:325px;
+}
+
+#socials li {
+    margin:0px 0px 15px 10px;
+    list-style-type:none;
+}
+
+#socials a {
+    color:var(--accent);
+}
+
+#socials a:hover {
+    color:var(--link-hover);
+}
+
+#socials i {
+    display:inline-block;
+    font-size:25px;
+    color:var(--accent);
+    border-radius:50%;
+    border:1px solid var(--accent);
+    padding:8px;
+    margin-right:4px;
+    margin-left:-1px;
+    margin-top:6px;
+}
+
+#socials i:hover {
+    color:var(--link-hover);
+    border:1px solid var(--link-hover);
+    transition:0.3s;
+}
+
+/*-- ABOUT --*/
+#about {
+    letter-spacing:.1em;
+    color:var(--text);
+    border-radius:25px;
+    background:var(--content-background);
+    width:62%;
+    margin-top:197px;
+    padding:20px 20px 20px 20px;
+    box-sizing:border-box;
+    float:right;
+}
+
+/*-- QUOTE --*/
+#quote {
+    letter-spacing:.1em;
+    border-radius:25px;
+    background:var(--content-background);
+    width:100%;
+    margin-top:20px;
+    padding:20px 20px 20px 20px;
+    box-sizing:border-box;
+    float:left;
+}
+
+#quote b {
+    font-size: 15px;
+    text-align:center;
+    display:block;
+    padding-left:50px;
+    padding-right:50px;
+}
+
+#quote .source {
+    color: var(--title); 
+    margin-top: 15px;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+#quote b::after {
+    font-family:'Spirax';
+    content: '❞';
+    color: var(--accent);
+    font-size: 1.5em;
+    display: inline-block;
+    text-align:center;
+    padding-right:20px;
+}
+
+#quote b::before {
+    font-family:'Spirax';
+    content: '❝';
+    color: var(--accent);
+    font-size: 1.5em;
+    display: inline-block;
+    text-align:center;
+}
+
+/*-- LIST 1 --*/
+.list1 {
+    letter-spacing:.1em;
+    color:var(--text);
+    border-radius:25px;
+    background:var(--content-background);
+    width:48%;
+    margin-top:20px;
+    padding:20px 20px 20px 20px;
+    box-sizing:border-box;
+    float:left;
+}
+
+.list1 #list li {
+    display:inline-block;
+    word-break:break-word;
+}
+
+.list1 #list li:not(:last-child):after {
+    content:'•';
+    color:var(--accent);
+    font-weight:bold;
+    padding-left:0.5em;
+    padding-right:0.5em;
+}
+
+/*-- LIST 2 --*/
+.list2 {
+    margin-bottom:20px;
+    letter-spacing:.1em;
+    color:var(--text);
+    border-radius:25px;
+    background:var(--content-background);
+    width:49%;
+    margin-top:20px;
+    margin-bottom:30px;
+    padding:20px 20px 20px 20px;
+    box-sizing:border-box;
+    float:right;
+}
+
+.list2 #list li {
+    display:inline-block;
+    word-break:break-word;
+}
+
+.list2 #list li:not(:last-child):after {
+    content:'•';
+    color:var(--accent);
+    font-weight:bold;
+    padding-left:0.5em;
+    padding-right:0.5em;
+}
+
+/*-- BLOGS --*/
+#blogs {
+    letter-spacing:.1em;
+    color:var(--text);
+    border-radius:25px;
+    background:var(--content-background);
+    margin-top:20px;
+    margin-bottom:30px;
+    padding:20px 20px 20px 20px;
+    box-sizing:border-box;
+    float:left;
+    width:48%;
+}
+
+.blog ol{
+    list-style:none;
+    display:inline;
+    margin:0;
+    padding:0;
+}
+
+.blog{
+    margin-left:-40px;
+    margin-top:-10px;
+}
+
+
+.blog li span{
+    display:inline;
+    padding-left:10px;
+    width:180px;
+}
+
+
+.blog li{
+    display:inline;
+    width:50%;
+    height:60px;
+    margin:auto;
+    float:left;
+    position:relative;
+}
+
+.blog li img{
+    width:40px;
+    height:40px;
+    margin:10px;
+    border-radius:3px;
+    float:left;
+}
+
+.blog h3{
+    font-family: 'Montserrat', sans-serif;
+    margin:0;
+    font-size:12px;
+    color:var(--accent);
+    line-height:60px;
+    transition:0.5s;
+}
+
+.blog h4{
+    font-weight:normal;
+    display:inline;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    text-transform:lowercase;
+    font-style:italic;
+    color:var(--text);
+    position:absolute;
+    line-height:60px;
+    top:0;
+    margin:0;
+    margin-top:5px;
+    left:60px;
+    font-size:10px;
+    opacity:0;
+    transition:0.3s;
+}
+
+.blog li:hover h4{
+    opacity:1;
+    margin-top:8px;
+    color:var(--link-hover);
+    transition:0.3s;
+}
+
+
+.blog li:hover h3{
+    margin-top:-8px;
+    transition:0.3s;
+    color:var(--link-hover);
+}
+
+</style>
+</head>
+
+<div id="main">
+
+<!-- START EDITING HERE -->
+
+<!-- TOP -->
+<div id="top">
+<div id="content">
+<!-- by default, your blog's icon will show. if you'd like another icon, replace {PortraitURL-128} with an image link of your choice -->
+    <div class="icon"><img src="{PortraitURL-128}"/></div>
+    <div class="title">about</div>
+    <div class="links">
+        <div id="nav">
+        <li><a href="/">index</a></li>
+        <li><a href="/ask">message</a></li>
+        <li><a href="/archive">archive</a></li>
+        <li><a href="/">link</a></li>
+        </div>
     </div>
-  </div>
-  
-  <div class=mini-sidebar><div class=title-bar>sunmate systems ☀️<div class=right>x</div></div><div class=inner>
-  
-    <p>💛 The Town System (Void) & The Void (TransCandyDemon) 💙</p>
-  </div></div></div>
-    
-  <div class=wide-sidebar><div class=title-bar>This box uses the class wide-sidebar <div class=right>x</div></div><div class=inner>
-  <p>This stylesheet made by EGGRAMEN! But the aesthetic is based off a tumblr blog theme I remember seeing around that I thought looked nice.</p>
-  <p>This particular stylesheet is not mobile friendly, and probably won't ever be. It works best at a minimum screen size of <B>1024x600</b>.</p>
-  </div></div>
-  </div>
-  
-    <div class=box><div class=box-title-bar>Overview<div class=right>x</div></div><div class=inner>
-    <p>👑 <mark>nathaniel/magpie/jschlatt</mark> : <a href="https://pluralpedia.org/w/Macaron">macaron</a>. serversona of a voidgenic usdd internal server. not human. is schlatt irl.<br />
-      🐏 <mark>age</mark> : deminfinage, forever 21, turning 30.<br />
-      🕳 <mark><a href="https://pronouns.freak.university/@schlattirl">pronouns</a></mark> : it/its, that thing, that, zey/zem, ly/lyr/lyri/lyric, no pronouns, 🍒🐙/🍒🐙s, 👑king/👑kings, hebe/hebes, ra/rape, ab/abuse, rät/räts, ra/ram.<br />
-      💙 <mark>labels</mark> : aroallo, alterous, gayhet/jaustenian-velaurian, xmnigender, hermaphrodite, etc.<br />
-      🪙 <mark>mental health</mark> : mixed personality disorder, cluster b and dependent are big, ocd, adhd, autism, udd, a lot tbh<br />
-      ──・──・・𖤐 ・・──・──<br />
-      🌟 <mark>paraphilias</mark> : certified omni-traumaphile, ficto-map, vlaviphilia, biasto, a lot but it&#39;s either fictional or in-headspace. intraplural map<br />
-      🐷 <mark>extra</mark> : fogtive heavy and factkin is great. other stuff too.</span></p>
-    </div></div>
+</div>
+</div>
 
-  <div class=box><div class=box-title-bar>IDs <div class=right>O</div></div><div class=inner>
-    <p><strong><code>A</code></strong>
-abyss monarch cookie <em>cookie run</em>
-alex kralie <em>marble hornets</em>
-antihuman
-atlas <em>bioshock</em></p>
-<p><strong><code>B</code></strong>
-billy hargrove <em>stranger things</em>
-bingiplier <em>markiplier</em>
-blitzo <em>helluva boss</em>
-bro strider <em>homestuck</em></p>
-<p><strong><code>C</code></strong>
-cady heron synpath <em>mean girls musical</em>
-cherubi <em>pokemon</em>
-clado-canine <em>therian</em>
-courtney <em>dead end</em>
-crying obsidian <em>minecraft</em></p>
-<p><strong><code>D</code></strong>
-dream smp hearthic
-drew gooden <em>youtube</em></p>
-<p><strong><code>E</code></strong>
-elizabeth eilander <em>rusty lake</em>
-entrapta <em>she-ra and the princesses of power</em></p>
-<p><strong><code>F</code></strong>
-five nights at freddy&#39;s hearthic
-fogtive
-funny <em>funny pets</em></p>
-<p><strong><code>G</code></strong>
-glass block <em>minecraft</em></p>
-<p><strong><code>H</code></strong>
-hansel <em>sodikken</em>
-harley limestone <em>rainbow high</em>
-hemoswap karkat <em>homestuck</em></p>
-<p><strong><code>I</code></strong>
-intisar (kauket) <em>dislyte</em></p>
-<p><strong><code>J</code></strong>
-jacob <em>don&#39;t kill me, jacob!</em>
-jibril <em>no game no life</em>
-josh dun <em>twenty one pilots</em>
-jschlatt <em>all (tommyinnit&#39;s mod series, slimecicle cinematic universe, dream smp, content creator, etc)</em></p>
-<p><strong><code>K</code></strong></p>
-<p><strong><code>L</code></strong>
-lamb <em>cult of the lamb</em>
-lauren bloom <em>new amsterdam</em></p>
-<p><strong><code>M</code></strong>
-magpie card <em>inscryption</em>
-miles 42/prowler!miles <em>spiderverse</em>
-mirabel madrigal <em>encanto</em>
-misty sutton / cutegirl <em>snotgirl</em>
-musisonar</p>
-<p><strong><code>N</code></strong>
-night raven college hearthic <em>twisted-wonderland</em></p>
-<p><strong><code>O</code></strong>
-object
-ocean <em>heartic</em>
-octopus <em>therian</em>
-ouroboros card <em>inscryption</em></p>
-<p><strong><code>P</code></strong>
-peridot <em>steven universe</em>
-phantom <em>natewantstobattle</em>
-popping candy cookie <em>cookie run</em>
-potato <em>cooking companions</em>
-pronghorn card <em>inscryption</em>
-pajama sam <em>self titled</em></p>
-<p><strong><code>Q</code></strong></p>
-<p><strong><code>R</code></strong>
-ram <em>therian</em> / ram <em>minecraft</em>
-raphael <em>rise of the teenage mutant ninja turtles</em>
-reagan ridley <em>inside job</em>
-revivebur <em>dream smp au</em>
-rook hunt <em>twisted-wonderland</em>
-rose vanderboom <em>rusty lake</em>
-royalty</p>
-<p><strong><code>S</code></strong>
-sapnap <em>content creator</em>
-seeker <em>original species</em>
-shadow weaver <em>she-ra and the princesses of power</em>
-shane <em>stardew valley</em>
-sheep (main one) <em>bluehills county</em>
-solarstelic
-soldier boy <em>the boys</em>
-space hearthic
-stan marsh <em>south park</em></p>
-<p><strong><code>T</code></strong>
-takumi hijirihara <em>danganronpa</em></p>
-<p><strong><code>U</code></strong></p>
-<p><strong><code>V</code></strong>
-veronica sawyer synpath <em>heathers musical</em>
-viktor hargreeves <em>the umbrella academy</em>
-void hearthic</p>
-<p><strong><code>W</code></strong> </p>
-<p><strong><code>X</code></strong></p>
-<p><strong><code>Y</code></strong></p>
-<p><strong><code>Z</code></strong></p>
-  </div></div>
-  
-    <div class=box><div class=box-title-bar>Partners <div class=right>O</div></div><div class=inner>
-    <p><code>CS&amp;G&#39;s F/Os</code>
-ˋ°•<em>⁀➷ Nanako Dojima (Persona 4) ❤️<br>ˋ°•</em>⁀➷ Leona Kingscholar (TWST) ❤️ 
-ˋ°•<em>⁀➷ Jschlatt (RPFicto) 🟠<br>ˋ°•</em>⁀➷ Jschlatt (DSMP) 🟠 
-ˋ°•<em>⁀➷ Rammie (Fictobjectum) 🟠
-ˋ°•</em>⁀➷ Shadow Weaver (SPOP) 🟠 
-ˋ°•<em>⁀➷ Mark<del>iplier</del> (RPficto) 🟠 
-ˋ°•</em>⁀➷ Shamura (COTL) 🟠 
-ˋ°•<em>⁀➷ Naomi Storm (Fictobjectum / Shadow High) 🟠
-ˋ°•</em>⁀➷ Victoria Storm (Fictobjectum / Shadow High) 🟠
-ˋ°•<em>⁀➷ Genzou Ichihara (Our Wonderland) 🟠 
-ˋ°•</em>⁀➷ Philza (RPF/SMP) 🟨 
-ˋ°•<em>⁀➷ Kuromi (Sanrio) 🟨 
-ˋ°•</em>⁀➷ Kalim Al-Asim (TWST) 🟨 
-ˋ°•<em>⁀➷ Jamil Viper (TWST) 🟨
-ˋ°•</em>⁀➷ Sobble (Pokemon) 🟨 
-ˋ°•<em>⁀➷ Inteleon (Pokemon) 🟨 
-ˋ°•</em>⁀➷ Default Default (CMK) 🟨 
-ˋ°•<em>⁀➷ Espurr (Pokemon) 🟩 
-ˋ°•</em>⁀➷ Bruno Madrigal (Encanto) 🟩 
-ˋ°•<em>⁀➷ Priya Mangal-Dewan (Turning Red) 🟩 
-ˋ°•</em>⁀➷ Niki (DSMP) 🟩 
-ˋ°•*⁀➷ Cat (Stray) 🟩 </p>
-<p><code>ID-F/Os</code><br>
-<image src="macaron assets/images/image49.jpg"> ID-Ficto !! :: A term for having an F/O specifically because one of your identities (kintype, otherspin, etc) is their partner.
-ˋ°•<em>⁀➷ Tyler Joseph (RPFicto) ❤️ 
-ˋ°•</em>⁀➷ Quackity (DSMP) 🟠 
-ˋ°•<em>⁀➷ Danny Gonzalez (RPFicto) 🟨 
-ˋ°•</em>⁀➷ Wilbur Soot (RPF/SMP) 🟨 
-ˋ°•*⁀➷ Vil Schoenheit (TWST) 🟩 </p>
-<p><code>Crushes+</code>
-ˋ°•<em>⁀➷ Manlybadasshero (RPFicto)
-ˋ°•</em>⁀➷ Rimuru Tempest (Slime)
-ˋ°•<em>⁀➷ Ted Nivison (RPFicto)
-ˋ°•</em>⁀➷ Kurtis Conner (RPFicto)
-ˋ°•<em>⁀➷ Jarvis Johnson (RPFicto)
-ˋ°•</em>⁀➷ Ryuu (Yakuza Reincarnation)
-ˋ°•<em>⁀➷ &quot;Gabriel&quot; (Mandela Catalogue)
-ˋ°•</em>⁀➷ Shuri (Kuma Kuma Kuma Bear)
-ˋ°•<em>⁀➷ Yan (Mao Zhi Ming)
-ˋ°•</em>⁀➷ Alec (the man who saved me on my isekai trip was a killer)
-ˋ°•<em>⁀➷ Hex Maniac Valerie (Pokemon)
-ˋ°•</em>⁀➷ Psychic (Pokemon)
-ˋ°•<em>⁀➷ Mona Makino (Mindscanners)
-ˋ°•</em>⁀➷ Crewel (TWST)</p>
-<p><em>Never Okay with sharing ❤️
-Ask before sharing 🟠
-Okay with sharing if friends 🟨
-Always okay with sharing 🟩</em></p>
-      <p><code>Object Partners</code></p>
-      ˋ°•*⁀➷ Boyfriend (Vapenum)<br>
-      ˋ°•*⁀➷ Schlatlas (Plushum)<br>
-      ˋ°•*⁀➷ Music (Conceptum)<br>
-      ˋ°•*⁀➷ Girlfriend (Obsidian)<br>
+<!-- you can choose the icons of your liking from https://phosphoricons.com. just replace the text after "ph-" with the icon name. -->
+<div class="container">
+
+<!--
+TEMPLATE:
+	<li><i class="ph-icon-name-fill"></i><span>detail</span></li>
+-->
+<div id="info">
+    <li><i class="ph-user-fill"></i><span>name</span></li>
+    <li><i class="ph-gender-intersex-fill"></i><span>pronouns</span></li>
+    <li><i class="ph-flag-fill"></i><span>nationality</span></li>
+    <li><i class="ph-cake-fill"></i><span>age</span></li>
+    <li><i class="ph-sun-fill"></i><span>sun sign</span></li>
+    <li><i class="ph-planet-fill"></i><span>mbti</span></li>
+    <li><i class="ph-sparkle-fill"></i><span>enneagram</span></li>
+</div>
+
+<!-- SOCIALS -->
+<div id="socials">
+
+<!-- 
+	you may remove title="name" if you don't want to have have text appearing when you hover over an icon.
+
+TEMPLATE:
+	<a href="link" title="name" target="_blank"><i class="ph-icon-name-fill"></i></a>
+-->
+    <a href="link" title="name" target="_blank"><i class="ph-icon-name-fill"></i></a>
+	<a href="link" title="name" target="_blank"><i class="ph-icon-name-fill"></i></a>
+	<a href="link" title="name" target="_blank"><i class="ph-icon-name-fill"></i></a>
+	<a href="link" title="name" target="_blank"><i class="ph-icon-name-fill"></i></a>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+<p><b>bold text</b></p>
+<p><em>italics</em></p>
+<ul>
+    <li>list</li>
+</ul>
+<blockquote>blockquote</blockquote>
+
+<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+<!-- QUOTE -->
+<div id="quote">
+<b>This is a quote.</b>
+<div class="source">— source</div>
+</div>
+
+<!-- LIST 1 -->
+<div class="list1">
+
+<!-- 
+    you may instead choose to do a: likes/dislikes list, previous urls list, fandoms list, etc.
+    you can delete <b>NAME</b> if you don't need it.
+    
+TEMPLATE:
+    <div id="list">
+        <li>one</li><li>two</li><li>three</li><li>four</li>
     </div>
-  </div>
-  
-   <div class=box><div class=box-title-bar>Religion <div class=right>x</div></div><div class=inner>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+-->
+  <div class="subtitle">title</div>
+  some optional details.
+  <br>
+  <br>
+  <b>CATEGORY NAME:</b>
+    <div id="list">
+        <li>one</li><li>two</li><li>three</li><li>four</li><li>five</li><li>six</li><li>seven</li><li>eight</li><li>nine</li><li>ten</li>
+    </div>
+</div>
+
+<!-- LIST 2 -->
+
+<div class="list2">
+<!-- 
+    you may instead choose to do a: likes/dislikes list, previous urls list, fandoms list, etc.
+    you can delete <b>NAME</b> if you don't need it.
     
-    </div></div>
+TEMPLATE:
+    <div id="list">
+        <li>one</li><li>two</li><li>three</li><li>four</li>
+    </div>
+-->
+  <div class="subtitle">title</div>
+  <b>CATEGORY 1:</b>
+    <div id="list">
+        <li>one</li><li>two</li><li>three</li><li>four</li><li>five</li><li>six</li><li>seven</li><li>eight</li><li>nine</li><li>ten</li>
+    </div>
+<br>
+  <b>CATEGORY 2:</b>
+     <div id="list">
+        <li>eleven</li><li>twelve</li><li>thirteen</li><li>fourteen</li><li>fifteen</li><li>sixteen</li><li>seventeem</li><li>eighteen</li><li>nineteen</li><li>twenty</li>
+    </div>
+<br>
+  <b>CATEGORY 3:</b>
+     <div id="list">
+        <li>twenty-one</li><li>twenty-two</li><li>twenty-three</li><li>twenty-four</li><li>twenty-five</li><li>twenty-six</li><li>twenty-seven</li><li>twenty-eight</li><li>twenty-nine</li><li>thirty</li>
+    </div>
+<br>
+  <b>CATEGORY FOUR:</b>
+     <div id="list">
+        <li>thirty-one</li><li>thirty-two</li><li>thirty-three</li><li>thirty-four</li><li>thirty-five</li><li>thirty-six</li><li>thirty-seven</li><li>thirty-eight</li><li>thirty-nine</li><li>forty</li>
+    </div>
+</div>
+
+<!-- BLOGS -->
+
+<div id="blogs">
+<!-- 
+    you may instead choose to do a sideblogs/source blogs section.
+	you need to replace the 'url' and 'name'.
+
+TEMPLATE:
+<a href="url" title="name" target="_blank">
+    <li>
+     <img src="https://api.tumblr.com/v2/blog/url.tumblr.com/avatar">
+      <h3>name</h3>
+       <h4>@url</h4>
+    </li>
+</a>
+-->
+  <div class="subtitle">friends</div>
+    <ol class="blog">
     
-    <div class=box><div class=box-title-bar>Other <div class=right>x</div></div><div class=inner>
-    <p>14-5-22-5-18 7-15-14-14-1 7-9-22-5 25-15-21 21-16</p><p>
-    14-5-22-5-18 7-15-14-14-1 12-5-20 25-15-21 4-15-23-14</p><p>
-    14-5-22-5-18 7-15-14-14-1 18-21-14 1-18-15-21-14-4 1-14-4 4-5-19-5-18-20 25-15-21</p>
-    <br>
-    <p>14-5-22-5-18 7-15-14-14-1 13-1-11-5 25-15-21 3-18-25</p>
-    <p>14-5-22-5-18 7-15-14-14-1 19-1-25 7-15-15-4-2-25-5</p>
-    <p>14-5-22-5-18 7-15-14-14-1 20-5-12-12 1 12-9-5 1-14-4 8-21-18-20 25-15-21</p>
-    </div></div>
-  
-  <div class=big-quote>”<i><midwide>DAMN</midwide></i> this looks like,, <br>,,,<br><Br><i><wide>GARBAGE</wide></i>”</div>
-  
-  </body>
+<a href="url" title="name" target="_blank">
+    <li>
+     <img src="https://api.tumblr.com/v2/blog/url.tumblr.com/avatar">
+      <h3>name</h3>
+       <h4>@url</h4>
+    </li>
+</a>
+<a href="url" title="name" target="_blank">
+    <li>
+     <img src="https://api.tumblr.com/v2/blog/url.tumblr.com/avatar">
+      <h3>name</h3>
+       <h4>@url</h4>
+    </li>
+</a>
+<a href="url" title="name" target="_blank">
+    <li>
+     <img src="https://api.tumblr.com/v2/blog/url.tumblr.com/avatar">
+      <h3>name</h3>
+       <h4>@url</h4>
+    </li>
+</a>
+<a href="url" title="name" target="_blank">
+    <li>
+     <img src="https://api.tumblr.com/v2/blog/url.tumblr.com/avatar">
+      <h3>name</h3>
+       <h4>@url</h4>
+    </li>
+</a>
+
+</div>
+</div>
+
+<!-- STOP EDITING HERE -->
+
+<!-- CREDITS — DO NOT TOUCH -->
+<a href="https://nobodynocrime.tumblr.com" target="_blank" title="MACCHIATO PAGE BY ACE" id="credit"><i class="ph-coffee"></i></a>
+
+<!-- TOOLTIPS — DO NOT TOUCH -->
+<script>
+tippy('[title]', {
+    theme: 'custom',
+    arrow: false,
+    followCursor: true,
+    delay: 100,
+    placement: 'right',
+    zIndex: 9999999999,
+    maxWidth: 400,
+ 
+    content(reference) {
+        const title = reference.getAttribute('title');
+        reference.removeAttribute('title');
+        return title;
+    },
+});
+</script>
+
+</body>
 </html>
