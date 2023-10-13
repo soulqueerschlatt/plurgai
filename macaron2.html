@@ -1,0 +1,791 @@
+<!DOCTYPE html><html>
+<head>
+
+<title>macaron / serversona !!</title> <!-- the title in the browser tab -->
+
+<link rel="shortcut icon" href="macaron assets/images/image08.png"/> <!-- the small pixel next to the title-->
+
+<!-- !DON'T TOUCH -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+<link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+<link href="#s-m-t-tooltip" rel="stylesheet" type="text/css" />
+
+<!-- GOOGLE FONTS -- if you want to change the font, add it here! -->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic' rel='stylesheet' type='text/css'>
+
+<!-- so you can edit the colors in the appearance options... -->
+
+<meta name="color:Active Tab BG" content="#d8f3eb"/>
+<meta name="color:Active Tab Text" content="#ffffff"/>
+<meta name="color:Blockquote BG" content="#fbfbfb"/>
+<meta name="color:Blockquote Border" content="#e5e5e5"/>
+<meta name="color:Blockquote Text" content="#b8b8b8"/>
+<meta name="color:Borders" content="#ffffff"/>
+<meta name="color:FAQ BG" content="#ffffff"/>
+<meta name="color:Following BG" content="#f8f8f8"/>
+<meta name="color:Following Border" content="#ebe3f8"/>
+<meta name="color:Gradient Top" content="#fff4fa"/>
+<meta name="color:Gradient Bottom" content="#cff5eb"/>
+<meta name="color:Info Subtitle BG" content="#f8f8f8"/>
+<meta name="color:Info Subtitle Text" content="#f5c9d9"/>
+<meta name="color:Link" content="#cfc3ea"/>
+<meta name="color:Links BG" content="#fbfbfb"/>
+<meta name="color:Links Text" content="#bdd3df"/>
+<meta name="color:Scroll" content="#e8e1f5"/>
+<meta name="color:Shadow" content="#ffffff"/>
+<meta name="color:Side Links" content="#d3cae7"/>
+<meta name="color:Tab Text" content="#ccede4"/>
+<meta name="color:Text" content="#a5a5a5"/>
+<meta name="color:Title" content="#ffffff"/>
+
+<!-- now the customization begins --> 
+
+<style type="text/css">
+
+/************************* SCROLLBAR CUSTOMIZATION *************************/
+
+::-webkit-scrollbar-track { 
+    
+    background-color:{color:Scroll}; /* the scrollbar color */
+    
+    /* !don't touch; the below makes the scroll's background transparent */
+    background-clip:padding-box; border:3px solid rgb(0, 0, 0); border:3px        solid rgba(0, 0, 0, 0); -webkit-background-clip:padding-box;
+}
+
+::-webkit-scrollbar-thumb {
+    
+    background-color:{color:Scroll}; /* the scrollbar color */
+    
+    border-radius:5px; /* how round your scrollbar is; the higher the number,     the rounder it is */
+    
+    /* !don't touch; the below makes the scroll's background transparent */
+    background-clip:padding-box; border:0px solid rgb(0, 0, 0); border:0px        solid rgba(255, 0, 0, 0); -webkit-background-clip: padding-box;
+}
+
+::-webkit-scrollbar { width:5px; } /* how thick your scrollbar is; recommended values are 5px and 7px */
+
+/*************************** GRADIENT BACKGROUND ***************************/
+
+html { 
+    
+background-image: url('blinkies/background.gif');
+    
+    height:100%; /* removing this will break the gradient BG */
+}
+
+body { 
+    
+    color:{color:Text}; /* general text color [info paragraphs, link subtitles     and FAQ questions] */
+    
+    font:11px ubuntu; /* !don't touch, this keeps the line-height stable */
+    
+    letter-spacing:1px; /* space between letters in general text */
+    
+    line-height:17px; /* space between lines in general text */
+    
+    /* !don't touch the bottom three */
+    margin:0; overflow-x:hidden; padding:0;
+}
+
+/********************************** LINKS **********************************/
+
+a {
+    
+    color:{color:Link}; /* link color */
+    
+    text-decoration:none; /* your options are none, underline, overline, and      line-through */
+}
+
+/****************************** FAQ ANSWERS ******************************/
+
+blockquote {
+    
+    background:{color:Blockquote BG}; /* background color */
+    
+    border-left:1px dashed {color:Blockquote Border}; /* border color */
+    
+    color:{color:Blockquote Text}; /* text color */
+    
+    /* !don't touch, these dictate the blockquote positioning */
+    margin-left:12px; padding-top:1px; padding-left:12px; padding-bottom:1px;     padding-right:0; width:90%; word-wrap:break-word;
+}
+
+/********************************* SIDEBAR ********************************/
+
+#sidebar {
+    
+    margin-left:-570px; /* how far it is from the left of the tabs box */
+    
+    margin-top:130px; /* !don't touch; how far it is from the top */
+}
+
+/********** PORTRAIT IMAGE **********/
+
+.portrait {
+    background-color:rgba(255, 255, 255, 0.4); /* the color and transparency      of the portrait background. I usually use white [255, 255, 255] and black     [0, 0, 0]. the last number is the transparency, 0 being completely gone       and 1 being completely there. you can use decimals! */
+    
+    border:1px solid {color:Borders}; /* image border color */
+    
+    border-radius:5px; /* how round the image is */
+    
+    /* shadow */
+    -webkit-box-shadow:6px 6px 0px -1px {color:Shadow}; 
+    box-shadow:6px 6px 0px -1px {color:Shadow};
+    
+    display:block; /* !don't touch; keeps things in place */
+    margin:0 auto; /* !don't touch; centers the image */
+    
+    margin-top:20px; margin-bottom:30px; /* !don't touch */
+    
+    padding:13px; /* how large the background is */
+    
+    width:110px; /* image size */
+}
+
+/**** INDEX, MESSAGE, ARCHIVE, ETC ****/
+
+.navigate {
+    
+    background-color:rgba(255, 255, 255, 0.4); /* the color and transparency      of the navigation background. I usually use white [255, 255, 255] and         black [0, 0, 0]. the last number is the transparency, 0 being completely      gone and 1 being completely there. you can use decimals! */
+    
+    border:1px solid {color:Borders}; /* navigation border color */
+    
+    border-radius:5px; /* how round the nav box is */
+    
+    /* shadow */
+    -webkit-box-shadow:6px 6px 0px -1px {color:Shadow}; 
+    box-shadow:6px 6px 0px -1px {color:Shadow};
+    
+    display:block; /* !don't touch; keeps things in place */
+    margin:0 auto; /* !don't touch; centers the image */
+    
+    height:112px; /* how tall the nav box is */
+    
+    padding:13px; /* how large the background is */
+    
+    width:110px; /* how wide the nav box is */
+}
+
+.navi {
+    
+    background-color:{color:FAQ BG}; /* background color */
+    
+    font-size:10px; /* link text size */
+    
+    margin-bottom:3px; /* spacing between links */
+    
+    padding:9px; /* how thick the link boxes are */
+    
+    text-align:center; /* if the text falls to the left, center, or right */
+    
+    text-transform:uppercase; /* this can be uppercase, lowercase, or none */
+}
+
+.navi a { color:{color:Side Links}; } /* link color */
+
+/**********************************  TITLE **********************************/
+
+.title {
+    
+    color:{color:Title}; /* title color */
+    
+    display:block; /* !don't touch; keeps things in place */
+    
+    font:15px ubuntu; /* title font and size */
+    
+    letter-spacing:1px; /* space between letters */
+    
+    margin-top:30px; /* !don't touch */
+    
+    text-align:center; /* if the text falls to the left, center, or right */
+    
+    text-transform:uppercase; /* this can be uppercase, lowercase, or none */
+}
+
+/****************************** OUTER TABS BOX ******************************/
+
+.tabs {
+    
+    background-color:rgba(255, 255, 255, 0.4); /* the color and transparency      of the navigation background. I usually use white [255, 255, 255] and         black [0, 0, 0]. the last number is the transparency, 0 being completely      gone and 1 being completely there. you can use decimals! */
+    
+    border:1px solid {color:Borders}; /* navigation border color */
+    
+    border-radius:5px; /* how round the nav box is */
+    
+    /* shadow */
+    -webkit-box-shadow:6px 6px 0px -1px {color:Shadow}; 
+    box-shadow:6px 6px 0px -1px {color:Shadow};
+    
+    display:block; /* !don't touch; keeps things in place */
+    margin:0 auto; /* !don't touch; centers the image */
+    margin-top:-405px; /* !don't touch */
+    
+    margin-bottom:25px;/* space between the tabs box and the inbox */
+    
+    padding:13px; padding-top:3px; /* size of the background */
+    
+    width:350px; /* size of the tabs box */
+}
+
+/* !don't touch */
+.tab-links:after { clear:both; content:''; display:block; }
+.tab-links li { float:left; list-style:none; margin-right:47px; }
+
+/********************************** TABS **********************************/
+ 
+/**************** NONACTIVE ****************/
+
+.tab-links a {
+    
+    background:{color:FAQ BG}; /* bg color; same as the rest of the box */
+    
+    border-radius:3px 3px 0px 0px; /* how round the tab corners are */
+    
+    color:{color:Tab Text}; /* text color */
+    
+    display:inline-block; /*!don't touch; keep things in place */
+    
+    font:11px ubuntu; /* font family and size */
+    
+    /* !don't touch */
+    margin-left:-40px;
+    padding:9px 15px; 
+    
+    text-transform:uppercase; /* this can be uppercase, lowercase, or none */
+    
+    transition:all linear 0.15s; /* !don't touch */
+}
+
+/***** NONACTIVE TABS ON HOVER + ACTIVE TAB *****/
+ 
+.tab-links a:hover, li.active a, li.active a:hover {
+    
+    background:{color:Active Tab BG}; /* background color */
+    
+    color:{color:Active Tab Text}; /* text color */
+    
+    text-decoration:none; /* your options are none, underline, overline, and      line-through */
+}
+
+/****************************** INNER TABS BOX ******************************/
+
+.tab-content {
+    
+    background:{color:FAQ BG}; /* background color */
+    
+    border-radius:5px; border-top-left-radius:0px; /* how rounded inner           corners are */
+    
+    font:10px open sans; /* font family and size */
+    
+    height:300px; /* how tall the tabs box is */
+    
+    letter-spacing:1px; /* spacing between letters */
+    
+    line-height:18px; /* spacing between lines */
+    
+    margin-top:-11px; /* !don't touch */
+    
+    overflow-y:scroll; /* enables scrolling */
+    
+    padding:13px; padding-top:0px; padding-bottom:0px; /* !don't touch */
+}
+ 
+/* !don't touch */
+.tab { display:none; }
+.tab.active { display:block; }
+
+/************************ ABOUT + QUESTION SUBTITLES ************************/
+
+.h {
+    
+    font-size:10px; /* text size */
+    
+    letter-spacing:1px; /* spacing between letters */
+    
+    text-transform:uppercase; /* this can be uppercase, lowercase, or none */
+}
+
+/****************************** LINK SUBTITLES ******************************/
+
+.hl, .hr {
+    
+    font-size:10px; /* font size */
+    
+    letter-spacing:1px; /* spacing between letters */
+    
+    text-align:center; /* if the text falls to the left, center, or right */
+    
+    text-transform:uppercase; /* this can be uppercase, lowercase, or none */
+    
+    width:144px; /* must match the width of the link boxes */
+}
+
+/******************************** LINK BOXES ********************************/
+
+.ll, .lr {
+    
+    background:{color:Links BG}; /* background color */
+    
+    margin-bottom:5px; /* vertical space between boxes */
+    
+    padding:6px; /* background size */
+    
+    width:144px; /* link box size; must match the width of link subtitles */
+}
+
+.ll a, .lr a { color:{color:Links Text}; } /* text color */
+
+/******************************** BLOGROLL ********************************/
+
+#blogroll { margin-left:-6px; margin-top:12px; } /* !don't touch */
+
+.blogicon {
+
+    background:{color:Following BG}; /* background color */
+    
+    border:1px dashed {color:Following Border}; /* border color */
+    
+    border-radius:3px; /* how round the icon is */
+    
+    margin-left:2px; margin-bottom:2px; /* space between icons */
+    
+    padding:9px; /* background size */
+}
+
+/********************************* ASK BOX *********************************/
+
+.inbox {
+    
+    background-color:rgba(255, 255, 255, 0.4); /* the color and transparency      of the portrait background. I usually use white [255, 255, 255] and black     [0, 0, 0]. the last number is the transparency, 0 being completely gone       and 1 being completely there. you can use decimals! */
+    
+    border:1px solid {color:Borders}; /* image border color */
+    
+    border-radius:5px; /* how round the image is */
+    
+    /* shadow */
+    -webkit-box-shadow:6px 6px 0px -1px {color:Shadow}; 
+    box-shadow:6px 6px 0px -1px {color:Shadow};
+    
+    display:block; /* !don't touch; keeps things in place */
+    margin:0 auto; /* !don't touch; centers the image */
+    overflow:hidden; /* !don't touch */
+    
+    padding:13px; /* background size */
+}
+
+/********************************* TOOLTIPS *********************************/
+
+#s-m-t-tooltip { 
+    background:{color:FAQ BG}; /* background color */
+    
+    border-radius:2px; /* how round the box is */
+    
+    color:{color:Side Links}; /* text color */
+    
+    font-size:9px; /* font size */
+    
+    letter-spacing:1px; /* space between letters */
+    
+    text-transform:uppercase; /* this can be uppercase, lowercase, or none */
+    
+    /* !don't touch */
+    display:block;
+    margin:20px 10px 10px 10px;
+    max-width:100px;
+    padding:6px; padding-bottom:3px;
+    word-wrap:break-word;
+    z-index:999999;
+}
+
+{CustomCSS} 
+</style>
+
+<!-- Tabs Script !don't touch -->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+<script>
+    
+    jQuery(document).ready(function() {
+    jQuery('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+ 
+        // Show/Hide Tabs
+        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+ 
+        // Change/remove current tab to active
+        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+});
+    
+</script>
+
+<!-- End Tabs Script -->
+
+<!-- Tooltips -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+
+<script>
+    (function($){
+        $(document).ready(function(){
+            $("[title]").style_my_tooltips();
+        });
+    })(jQuery);
+</script>
+
+<!-- End Tooltips -->
+
+</head>
+<body>
+
+<!-- now we begin editing the content -->
+
+<!--------------------------------- SIDEBAR --------------------------------->
+
+<div id="sidebar">
+
+<img class="portrait" src="macaron assets/images/image22.jpg" alt=""/><!-- portrait image; paste URL in src="" between quotations -->
+    
+<div class="navigate"><!-- side links below; don't remove the credit! -->
+    
+    <div class="navi"><a href="/">return</a></div>
+    <div class="navi"><a href="http://maomuthemes.tumblr.com">credit</a></div>
+    
+</div><!-- end navigate -->
+
+<div class="title">macaron</div><!-- tabs box title -->
+    
+</div><!-- end sidebar -->
+
+<!------------------------------ MAIN CONTENT ------------------------------>
+
+<div class="tabs">
+
+    <ul class="tab-links">
+    
+        <li class="active"><a href="#tab1">Info</a></li><!-- 1st tab title -->
+        
+        <li><a href="#tab2">Kin</a></li><!-- 2nd tab title -->
+        
+        <li><a href="#tab3">Partners</a></li><!-- 3rd tab title -->
+        
+        <li><a href="#tab4">More</a></li><!-- 4th tab title -->
+        
+    </ul><!-- end tab links -->
+ 
+    <div class="tab-content">
+    
+<!---------------------------------- INFO ---------------------------------->
+    
+        <div id="tab1" class="tab active">
+        
+            <p class="h"><img src="blinkies/sheepy.gif" alt=""/> <!-- if you want a cute pixel next to the text; paste URL in src="" between quotations -->
+            
+            <font style="background:{color:Info Subtitle BG}; color:{color:Info Subtitle Text}; padding:0px 4px 0px 4px;"> <!-- bg and text colors -->
+            
+👑 <mark>nathaniel/magpie/jschlatt</mark> : <a href="https://pluralpedia.org/w/Macaron">macaron</a>. serversona of a voidgenic usdd internal server. not human. is schlatt irl.
+            
+            <p class="h"><img src="blinkies/sheepy.gif" alt=""/> <!-- pixel -->
+            
+            <font style="background:{color:Info Subtitle BG}; color:{color:Info Subtitle Text}; padding:0px 4px 0px 4px;"> <!-- bg and text colors -->
+            
+🐏 <mark>age</mark> : deminfinage, forever 21, turning 30.
+            
+            <p class="h"><img src="blinkies/sheepy.gif" alt=""/>  <!-- pixel -->
+            
+            <font style="background:{color:Info Subtitle BG}; color:{color:Info Subtitle Text}; padding:0px 4px 0px 4px;"> <!-- bg and text colors -->
+            
+🕳 <mark><a href="https://pronouns.freak.university/@schlattirl">pronouns</a></mark> : it/its, that thing, that, zey/zem, ly/lyr/lyri/lyric, no pronouns, 🍒🐙/🍒🐙s, 👑king/👑kings, hebe/hebes, ra/rape, ab/abuse, rät/räts, ra/ram.
+💙 <mark>labels</mark> : abro, jaustenian-velaurian, pan/infinitegender, evian, aegosexual, absgender, aro, a lot ffs. i was going to link our hoard google doc. it&#39;s 136 pages long. maybe i won&#39;t.<br />
+🪙 <mark>mental health</mark> : mixed personality disorder, cluster b and dependent are big, ocd, adhd, autism, udd, a lot tbh<br />
+──・──・・𖤐 ・・──・──<br />
+🌟 <mark>paraphilias</mark> : certified omni-traumaphile, ficto-map, vlaviphilia, biasto, a lot but it&#39;s either fictional or in-headspace. intraplural map<br />
+🐷 <mark>extra</mark> : fogtive heavy and factkin is great. other stuff too.
+            
+            <p>First paragraph. Add as many as you want!</p>
+            
+            <p>Second pargraph. Here is how you <i>italicize</i>, <b>bold</b>, make a <blockquote>blockquote</blockquote> <s>strikethrough</s>, <small>shrink text</small>, or <big>enlarge</big> it.</p>
+            
+            <p>Third paragraph. The scrollbar will appear once the text exceeds the length of the box, no worries!</p>
+            
+        </div><!-- End Info -->
+    
+<!------------------------------ LINKS / TAGS ------------------------------>
+ 
+        <div id="tab2" class="tab">
+        
+        <table><tr>
+        
+        <!-- left side; odd numbered boxes -->
+        
+        <td valign="top">
+        
+            <div class="hl"><img src="" alt=""/> 01: as (ppl)</div><!-- section title + pixel; paste pixel URL in src="" between quotations -->
+            
+            <div class="ll"><!-- your links below; don't be afraid to add more links, the boxes actually look cool when they're uneven lengths -->
+<p>ੈ♡˳ Josh Dun (twenty one pilots)<br>
+ੈ♡˳ Popping Candy Cookie (CROB)<br>
+ੈ♡˳ Revivebur (DSMP AU)<br>
+ੈ♡˳ Mirabel Madrigal (Encanto)<br>
+ੈ♡˳ Rook Hunt (TWST)<br>
+ੈ♡˳ Misty Sutton / Cutegirl (Snotgirl)<br>
+ੈ♡˳ Ouroboros Card (Inscryption)<br>
+ੈ♡˳ Drew Gooden (Youtube)<br>
+ੈ♡˳ Pronghorn Card (Inscryption)<br>
+ੈ♡˳ Atlas (Bioshock)<br>
+ੈ♡˳ Takumi Hijirihara (Danganronpa)<br>
+ੈ♡˳ Bro Strider (Homestuck)<br>
+ੈ♡˳ Viktor Hargreeves (TUA)<br>
+ੈ♡˳ Magpie Card (Inscryption)<br>
+ੈ♡˳ Jibril (No Game No Life)<br>
+ੈ♡˳ Funny (Funny Pets)<br>
+ੈ♡˳ Billy Hargrove (Stranger Things)<br>
+ੈ♡˳ Bingiplier (Markiplier)<br>
+ੈ♡˳ Alex Kralie (Marble Hornets)<br>
+ੈ♡˳ Potato (Cooking Companions)<br>
+ੈ♡˳ Phantom (NWTB)<br>
+ੈ♡˳ Cherubi (Pokemon)<br>
+ੈ♡˳ Peridot (SU)<br>
+ੈ♡˳ Lamb (Cult of the Lamb)<br>
+ੈ♡˳ Sheep (Parsnip)<br>
+ੈ♡˳ Jacob (don&#39;t kill me, jacob!)<br>
+ੈ♡˳ Hansel (Sodikken)<br>
+ੈ♡˳ Soldier Boy (The Boys)<br>
+ੈ♡˳ Rose Vanderboom (Rusty Lake)<br>
+ੈ♡˳ Elizabeth Eilander (Rusty Lake)<br>
+ੈ♡˳ Entrapta (SPOP)<br>
+ੈ♡˳ Shadow Weaver (SPOP)<br>
+ੈ♡˳ Blitzo (Helluva Boss)<br>
+ੈ♡˳ Hemoswap Karkat (Homestuck)<br>
+ੈ♡˳ Reagan Ridley (Inside Job)<br>
+ੈ♡˳ Raphael (ROTTMNT)<br>
+ੈ♡˳ Courtney (Dead End)<br>
+ੈ♡˳ Shane (Stardew Valley)<br>
+ੈ♡˳ Harley Limestone (Rainbow High)<br>
+ੈ♡˳ Stan Marsh (South Park)<br>
+ੈ♡˳ Dr. Lauren Bloom (New Amsterdam)<br>
+ੈ♡˳ Intisar (Kauket) (Dislyte)<br>
+ੈ♡˳ Miles 42/Prowler!Miles (Spiderverse)<br>
+ੈ♡˳ Abyss Monarch Cookie (CROB)<br>
+ੈ♡˳ Pajama Sam (Humongous Entertainment)<br>
+ੈ♡˳ Sapnap (Youtube, DSMP)</p>
+            </div><!-- end links -->
+            
+            <div class="hl"><img src="" alt=""/> 03: as (etc)</div><!-- section title + pixel -->
+            
+            <div class="ll"><!-- your links below -->
+ੈ♡˳ Glass Block (Minecraft)<br>
+ੈ♡˳ Crying Obsidian (Minecraft)<br>
+ੈ♡˳ Clado-Canine<br>
+ੈ♡˳ Royalty<br>
+ੈ♡˳ Seeker<br>
+ੈ♡˳ Octopus<br>
+ੈ♡˳ Ram / Minecraft Ram<br>
+ੈ♡˳ Antihuman<br>
+ੈ♡˳ Fogtive<br>
+ੈ♡˳ Object<br>
+            </div><!-- end links -->
+        </td>
+        
+        <td valign="top">
+        
+            <div class="hr"><img src="" alt=""/> 02: with</div><!-- section title + pixel -->
+            
+            <div class="lr"><!-- your links below -->
+ੈ♡˳ Night Raven College Hearthic<br>
+ੈ♡˳ Dream SMP Hearthic<br>
+ੈ♡˳ FNAF Hearthic<br>
+ੈ♡˳ Void Hearthic<br>
+ੈ♡˳ Space Hearthic<br>
+ੈ♡˳ Ocean Hearthic<br>
+ੈ♡˳ Veronica Sawyer Synpath<br>
+ੈ♡˳ Cady Heron Synpath
+            </div><!-- end links -->
+            
+        </td><!-- end right -->
+        
+        </tr></table><!-- end table -->
+            
+        </div><!-- End Links/Tags -->
+        
+<!---------------------------------- FAQ ---------------------------------->
+ 
+        <div id="tab3" class="tab">
+
+        <table><tr>
+        
+        <!-- left side; odd numbered boxes -->
+        
+        <td valign="top">
+        
+            <div class="hl"><img src="" alt=""/> 01: f/os</div><!-- section title + pixel; paste pixel URL in src="" between quotations -->
+            
+            <div class="ll">
+        
+ˋ°•⁀➷ Nanako Dojima (Persona 4) ❤️ <br>
+ˋ°•⁀➷ Leona Kingscholar (TWST) ❤️ <br>
+ˋ°•⁀➷ Jschlatt (RPFicto) 🟠<br>
+ˋ°•⁀➷ Jschlatt (DSMP) 🟠 <br>
+ˋ°•⁀➷ Rammie (Fictobjectum) 🟠<br>
+ˋ°•⁀➷ Shadow Weaver (SPOP) 🟠 <br>
+ˋ°•⁀➷ Markiplier (RPficto) 🟠 <br>
+ˋ°•⁀➷ Shamura (COTL) 🟠 <br>
+ˋ°•⁀➷ Naomi Storm (Fictobjectum / Shadow High) 🟠<br>
+ˋ°•⁀➷ Victoria Storm (Fictobjectum / Shadow High) 🟠<br>
+ˋ°•⁀➷ Genzou Ichihara (Our Wonderland) 🟠 <br>
+ˋ°•⁀➷ HABIT (Everymanhybrid) 🟠 <br>
+ˋ°•⁀➷ Philza (RPF/SMP) 🟨 <br>
+ˋ°•⁀➷ Kuromi (Sanrio) 🟨 <br>
+ˋ°•⁀➷ Kalim Al-Asim (TWST) 🟨 <br>
+ˋ°•⁀➷ Jamil Viper (TWST) 🟨<br>
+ˋ°•⁀➷ Sobble (Pokemon) 🟨 <br>
+ˋ°•⁀➷ Inteleon (Pokemon) 🟨 <br>
+ˋ°•⁀➷ Default Default (CMK) 🟨 <br>
+ˋ°•⁀➷ Pajama Sam (Self Titled) 🟨 <br>
+ˋ°•⁀➷ Espurr (Pokemon) 🟩 <br>
+ˋ°•⁀➷ Bruno Madrigal (Encanto) 🟩 <br>
+ˋ°•⁀➷ Priya Mangal-Dewan (Turning Red) 🟩 <br>
+ˋ°•⁀➷ Niki (DSMP) 🟩 <br>
+ˋ°•⁀➷ Cat (Stray) 🟩 <br>
+            </div>
+                      <div class="hl"><img src="" alt=""/> 03: crushes+ (etc)</div><!-- section title + pixel -->
+            
+            <div class="ll"><!-- your links below -->
+  ˋ°•⁀➷ Manlybadasshero (RPFicto)<br>
+ˋ°•⁀➷ Rimuru Tempest (Slime)<br>
+ˋ°•⁀➷ Ted Nivison (RPFicto)<br>
+ˋ°•⁀➷ Kurtis Conner (RPFicto)<br>
+ˋ°•⁀➷ Jarvis Johnson (RPFicto)<br>
+ˋ°•⁀➷ Ryuu (Yakuza Reincarnation)<br>
+ˋ°•⁀➷ "Gabriel" (Mandela Catalogue)<br>
+ˋ°•⁀➷ Shuri (Kuma Kuma Kuma Bear)<br>
+ˋ°•⁀➷ Yan (Mao Zhi Ming)<br>
+ˋ°•⁀➷ Alec (the man who saved me on my isekai trip was a killer)<br>
+ˋ°•⁀➷ Hex Maniac Valerie (Pokemon)<br>
+ˋ°•⁀➷ Psychic (Pokemon)<br>
+ˋ°•⁀➷ Mona Makino (Mindscanners)<br>
+ˋ°•⁀➷ Crewel (TWST)<br>
+            </div>
+
+                                <div class="hl"><img src="" alt=""/> 05: object partners</div><!-- section title + pixel -->
+            
+            <div class="ll"><!-- your links below -->
+ˋ°•*⁀➷ Boyfriend (Vapenum)<br>
+
+ˋ°•*⁀➷ Schlatlas (Plushum)<br>
+
+ˋ°•*⁀➷ Music (Conceptum)<br>
+
+ˋ°•*⁀➷ Girlfriend (Obsidian)<br>
+        </td>
+
+        <td valign="top">
+        
+            <div class="hr"><img src="" alt=""/> 02: id-f/os</div><!-- section title + pixel -->
+            
+            <div class="lr">
+ˋ°•⁀➷ Tyler Joseph (RPFicto) ❤️ <br>
+ˋ°•⁀➷ Quackity (DSMP) 🟠 <br>
+ˋ°•⁀➷ Danny Gonzalez (RPFicto) 🟨 <br>
+ˋ°•⁀➷ Wilbur Soot (RPF/SMP) 🟨 <br>
+ˋ°•⁀➷ Vil Schoenheit (TWST) 🟩 <br>
+            </div>
+            <div class="hr"><img src="" alt=""/> 04: map</div><!-- section title + pixel -->
+            
+            <div class="lr">
+
+    Never Okay with sharing ❤️<br>
+Ask before sharing 🟠<br>
+Okay with sharing if friends 🟨<br>
+Always okay with sharing 🟩<br>
+            </div>
+                      <div class="hr"><img src="" alt=""/> 06: sunmate systems</div><!-- section title + pixel -->
+            
+            <div class="lr">
+              Candy/The Void<br>
+              Void/The Town
+            </div>
+        </td><!-- end right -->
+        
+        </tr></table><!-- end table -->
+            
+        </div><!-- End Links/Tags -->
+    
+<!-------------------------------- BLOGROLL -------------------------------->
+    
+<!-- you don't really need to edit this -->    
+    
+    <div id="tab4" class="tab">
+
+        <table><tr>
+        
+        <!-- left side; odd numbered boxes -->
+        
+        <td valign="top">
+        
+            <div class="hl"><img src="" alt=""/> 01: religions</div><!-- section title + pixel; paste pixel URL in src="" between quotations -->
+            
+            <div class="ll">
+Eclecticism<br>
+Judaism<br>
+Hermaphroditus<br>
+The Outsider<br>
+Loki<br>
+Zagreus<br>
+Yaboku (Yato)<br>
+Lilith<br>
+Wicca<br>
+Infinite Universes<br>
+Server Specific Religion<br>
+                      </td><!-- end right -->
+        
+        </tr></table><!-- end table -->
+            
+        </div><!-- End Links/Tags -->
+</div><!-- end tabs -->
+
+<!--------------------------------- ASK BOX --------------------------------->
+
+<!-- make sure you change YOURURLHERE to your URL -->
+
+<div class="card">
+<div class="card-header">
+I'm problematic, wanna find out how much?
+</div>
+<div class="card-body">
+<div id="question-box">
+<textarea class="form-control js-initialized" data-character-count-target="input" name="qb-question" placeholder="Type your question here…"></textarea>
+<div class="row" style="padding-top: 5px;">
+<div class="col-6">
+<label>
+<input name="qb-anonymous" type="checkbox">
+Hide your name
+</label>
+<br>
+</div>
+<div class="col-6">
+<p class="pull-right">
+<span class="text-muted me-1 d-none" data-character-count-target="counter">512</span>
+<input name="qb-to" type="hidden" value="110317051962674223">
+<button class="btn btn-primary js-initialized" data-character-count-target="action" data-loading-text="Asking…" data-promote="false" name="qb-ask" type="button">
+Ask
+</button>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div><!-- End Ask Box -->
+
+</body>
+</html>
