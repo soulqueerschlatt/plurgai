@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+
+	<!--
+
+			THE FATALST'S MINT BOX NETWORK PAGE
+
+			PLEASE DONT DELETE CREDIT. MESSAGE ME AT FATALST.TUMBLR.COM/ASK
+
+			LAST UPDATED: APR 2018
+
+	-->
+
+	<style>figure{margin:0}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}.tmblr-iframe--amp-cta-button{visibility:hidden;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:100}.tmblr-iframe--amp-cta-button.tmblr-iframe--loaded{visibility:visible;animation:iframe-app-cta-transition .2s ease-out}</style><link rel="stylesheet" media="screen" href="https://assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css?_v=f085dde138e244526309d4673db67b4c"><link rel="shortcut icon" href="https://64.media.tumblr.com/avatar_942e8ce63119_128.pnj">
+	<title>Systemic</title>
+	<link rel="alternate" type="application/rss+xml" href="https://fatalst.tumblr.com/rss">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
+
+	<style type="text/css">
+
+		@font-face { font-family: "silkscreen"; src: url('https://dl.dropboxusercontent.com/s/4bj79wi75v77m0r/slkscr.ttf?dl=1'); format(“truetype”);}
+
+
+		/*
+			VARIABLES. CHANGE THE COLORS AT WILL. 
+			accent-1 is mint at default. it's used as all of the color in the code. a lighter color tends to look better
+			accent-2 is gray at default. it's used in outlines and the scrollbar, as well as bold and link hover.
+			text is black by default.
+			bkgd is white by default.
+		*/
+		:root {
+		  --accent-1: #57e5c9;
+		  --accent-2: #d8d8d8;
+		  --text: #000000;
+		  --bkgd: #ffffff;
+		}
+
+		html, body{
+			max-width: 100%;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+
+		/* SCROLLBAR */
+		::-webkit-scrollbar {
+          width: 2px;
+          height: 2px;
+        }
+       
+        ::-webkit-scrollbar-button {
+          width: 0px;
+          height: 0px;
+        }
+       
+        ::-webkit-scrollbar-thumb {
+          background: var(--accent-2);
+          border: 0px none #ffffff;
+          border-radius: 0px;
+        }
+       
+        ::-webkit-scrollbar-thumb:hover {
+          background: var(--accent-2);
+        }
+       
+        ::-webkit-scrollbar-thumb:active {
+          background: transparent;
+        }
+       
+        ::-webkit-scrollbar-track {
+          background: transparent;
+          border: 0px none #ffffff;
+          border-radius: 0px;
+        }
+       
+        ::-webkit-scrollbar-track:hover {
+          background: transparent;
+        }
+       
+        ::-webkit-scrollbar-track:active {
+          background: transparent;
+        }
+       
+        ::-webkit-scrollbar-corner {
+          background: transparent;
+        }
+
+		body{
+			background-color: var(--bkgd);
+			font-family: Helvetica, sans-serif;
+			color: var(--text);
+			font-size: 11px;
+			text-align: center;
+		}
+
+		/* LINKS */
+		a:link, a:visited{
+			font-family: 'silkscreen';
+			font-size: 10px;
+			background: var(--accent-1);
+			padding-top: 2px;
+			padding-bottom: 2px;
+			text-decoration: none;
+			color: var(--bkgd);
+			margin: auto;
+			margin-bottom: 5px;
+			float: top;
+			display: block;
+			width: auto;
+		}
+
+		a:hover, a:active{
+			color: var(--text);
+			background: var(--accent-2);
+			font-weight: bolder;
+		}
+
+		/* ALL THE DIVS and the stuff in them. don't mess with the spacing of these too much */
+		#contents{
+			width: 660px;
+			height: 76%;
+			float: center;
+			top:0;
+    		bottom: 0;
+    		left: 0;
+    		right: 0;
+    		margin: auto;
+    		margin-top: 90px;
+    		margin-bottom: 50px;
+    		padding: 20px;
+			position: absolute;
+			border: var(--accent-2) 1px solid;
+			overflow-y: scroll;
+		}
+
+		#title{
+			width: 200px;
+			float: left;
+			position: fixed;
+			bottom: 10%;
+			left: 2%;
+		}
+
+		#title a{
+			display: initial;
+			padding: 5px;
+		}
+
+		/* PAGE TITLE */
+		h1{
+			font-family: 'Cuprum', sans-serif;
+			font-size: 30px;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+		}
+
+		/* CHARACTER BOXES */
+		.chara{
+			width: 120px;
+			height: 138px;
+			margin: 20px;
+			display: inline-block;
+		}
+
+		.chara img{
+			margin: 0px;
+			width: 120px;
+			height: 120px;
+			display: block;
+			float: top;
+		}
+
+		/* character name button */
+		button {
+			font-family: 'silkscreen';
+			font-size: 10px;
+		    background-color: var(--accent-1);
+		    border: none;
+		    outline: none;
+		    cursor: pointer;
+			width: 120px;
+			height: 18px;
+			display: block;
+			float: bottom;
+			padding-top: 3px;
+		}
+
+		button:hover{
+			color: var(--bkgd);
+		}
+
+		button.active{
+			color: var(--accent-1);
+		}
+
+		/* the nice foggy look over the rest of the page when the popup is active */
+		#overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+    		left: 0;
+    		right: 0;
+            background: var(--bkgd);
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0.8;
+            z-index: 100;
+            overflow: hidden;
+        }
+ 
+         /* POPUP: try not to mess with the numbers here it might make the popup appear uncentered */
+        .popup {
+			font-family: 'silkscreen';
+            display: none;
+			float: center;
+			top:0;
+    		bottom: 0;
+    		left: 0;
+    		right: 0;
+    		margin: auto;
+            background: transparent;
+            width: 500px;
+            height: 250px;
+            z-index: 200;
+            position: fixed;
+        }
+
+        /* quote in the popup. it should allow it to be very big without cutting into the rest of the popup */
+        .popupquote{
+        	width: 490px;
+        	height: auto;
+        	padding: 5px;
+			font-family: 'silkscreen';
+			font-size: 10px;
+		    background-color: var(--accent-1);
+			display: block;
+		    float: top;
+		    margin-bottom: 20px;
+            border: 1px var(--accent-1) solid;
+        }
+
+        /* this is the white background part of the popup */
+        .popupcont{
+        	background: var(--bkgd);
+            border: 1px var(--accent-2) solid;
+            height: 228px;
+            width: 100%;
+            float: bottom;
+        }
+
+        /* first column in the popup */
+        .col{
+        	width: 137px;
+        	height: 215px;
+        	margin-top: 5px;
+        	margin-right: 5px;
+        	margin-left: 5px;
+        	display: inline-block;
+        	float: left;
+        	padding: 0px;
+        	position: relative;
+        	padding-left: 5px;
+        }
+
+        /* bio column in popup */
+        .col2{
+            width: 207px;
+            height: 215px;
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+            display: inline-block;
+            float: left;
+            padding: 0px;
+            position: relative;
+        }
+
+        /* links column in the popup */
+        .col3{
+        	width: 117px;
+        	height: 215px;
+        	margin-top: 5px;
+        	margin-right: 5px;
+        	margin-left: 5px;
+        	display: inline-block;
+        	float: left;
+        	padding: 0px;
+        	position: relative;
+        }
+
+        /* edits to links so they look better */
+        .popup a:link, a:visited{
+			padding: 5px;
+			width: 60px;
+		}
+
+        h2{
+			font-family: 'silkscreen';
+			font-size: 12px;
+			color: var(--accent-1);
+			margin-bottom: 20px;
+        }
+
+        p{
+        	font-size: 10px;
+        	line-height: 15px;
+        	text-align: left;
+        	padding-left: 5px;
+        }
+
+        /* I altered bold. feel free to delete this, but this is how it gets that highlighted look */
+        b{
+			font-family: 'silkscreen';
+			background: var(--accent-2);
+			padding: 4px;
+        }
+
+        /* this is what lets the paragraph in the second column scroll if needed */
+        .para{
+        	overflow-y: scroll;
+        	padding: 0px;
+        	margin: 0px;
+        	margin-top: -12px;
+        	height: 180px;
+        }
+
+        .para p{
+        	margin-bottom: -5px;
+        }
+
+		#punk{
+			font-size: 8px;
+			width: 25px;
+			height: 25px;
+			top: 97%;
+			left: 1%;
+			position: fixed;
+		}
+
+		/* DIVS END */
+
+	</style>
+
+<script
+    defer
+    type="application/javascript"
+    id="bilmur"
+    data-provider="tumblr.com"
+    data-service="blognetwork"
+    data-customproperties='{"theme": ""}'
+    nonce="ufOuh8sJISibfnKTYNOTgIjPrTE"
+    src="https://s0.wp.com/wp-content/js/bilmur.min.js?m=202341"
+  ></script><script src="https://assets.tumblr.com/assets/scripts/tumblelog_post_message_queue.js?_v=a8fadfa499d8cb7c3f8eefdf0b1adfdd"></script><!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. --><!-- Read more: http://ogp.me/ --><meta property="fb:app_id" content="48119224995" /><meta property="og:site_name" content="Tumblr" /><meta property="og:title" content="Tumblr" /><meta property="og:url" content="https://atlasxborn.tumblr.com/a" /><meta property="og:type" content="article" /><meta property="al:ios:url" content="tumblr://x-callback-url/blog?blogName=atlasxborn&amp;postID=" /><meta property="al:ios:app_name" content="Tumblr" /><meta property="al:ios:app_store_id" content="305343404" /><meta property="al:android:url" content="tumblr://x-callback-url/blog?blogName=atlasxborn&amp;postID=" /><meta property="al:android:app_name" content="Tumblr" /><meta property="al:android:package" content="com.tumblr" /><!-- END TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- TWITTER TAGS --><meta charset="utf-8"><meta name="twitter:site" content="tumblr" /><meta name="twitter:card" content="summary" /><meta name="twitter:description" content="a muse inspiration sideblog to atlumrotcua. no longer an rp blog." /><meta name="twitter:title" content="𝕤𝕪𝕤𝕥𝕖𝕞𝕚𝕔" /><meta name="twitter:app:name:iphone" content="Tumblr" /><meta name="twitter:app:name:ipad" content="Tumblr" /><meta name="twitter:app:name:googleplay" content="Tumblr" /><meta name="twitter:app:id:iphone" content="305343404" /><meta name="twitter:app:id:ipad" content="305343404" /><meta name="twitter:app:id:googleplay" content="com.tumblr" /><meta name="twitter:app:url:iphone" content="tumblr://x-callback-url/blog?blogName=atlasxborn&amp;referrer=twitter-cards" /><meta name="twitter:app:url:ipad" content="tumblr://x-callback-url/blog?blogName=atlasxborn&amp;referrer=twitter-cards" /><meta name="twitter:app:url:googleplay" content="tumblr://x-callback-url/blog?blogName=atlasxborn&amp;referrer=twitter-cards" /><link rel="canonical" href="https://atlasxborn.tumblr.com/a" /></head>
+<body>
+
+	<!--
+
+		CTRL + F or CMMD + F AND SEARCH THE WORDS "EDIT HERE"
+		TO FIND ALL THE PLACES YOU NEED TO CHANGE THE LINKS
+		OR THE IMAGES
+
+	-->
+	<div id="title"> <!-- PAGE TITLE AND LINKS -->
+		<h1>Systemic</h1>
+		<a href="/">return</a>
+		<a href="/ask">ask</a>
+	</div>
+
+	<div id="contents">
+
+		<div class="chara">
+			<img src="https://78.media.tumblr.com/fdcd45e0c8ad59062c956399203a474c/tumblr_nx4d50BtVd1unjlk6o4_250.png" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch1">Warren</button>
+		</div>
+ 
+    	<div class="popup ch1">
+    		<div class="popupquote">"I hold back, sometimes I don't.</div>
+    		<div class="popupcont">
+    			<div class="col">
+    				<h2>Quick Look</h2>
+    				<p><b>Name:</b> Warren Atlas-Bardot</p>
+    				<p><b>Age:</b> 31</p>
+    				<p><b>Gender:</b> Gender Neutral (he/him)</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> Quiosexual</p>
+    				<p><b>Occupation:</b> Writer</p>
+    				<p><b>Distinguishing Features:</b> Backwards snapback, regular eyes.</p>
+    			</div>
+    			<div class="col2">
+    				<h2>About</h2>
+    				<div class="para">
+    					<p>Warren was born to the Atlas family, who were royalty. His father was a terrible person, who had decided that identical twins was bad luck for the sole purpose of killing a child. Warren’s older sister, Presley, stole him and made sure he would be adopted by a real family. Warren was adopted by a woman named Lucille Bardot. Warren dissociated a lot, and even had a system. When he was 12, he had a bad spell and Killer took over. Killer attacked a random boy at his birthday party, and was sent to a mental facility for 2 years. He has no recollection of this, along with many other memories. This caused him to be held back in school 2 years. He didn’t have many friends growing up because of this, actually only 4. Gregory, Voltaire, Cody, and Derek. Voltaire and Cody grew up in a bad home, and due to Warren’s powers to write things real, he accidentally made Cody and Voltaire get practically adopted by his mother, while lying to the nurse to make sure they could go home since Cody was sick.
+Gregory was a troubled person, and while they had been dating, Gregory ended up committing suicide.
+On Warren’s 18th birthday, he decided to have a birthday party. Of course, birthdays aren’t good for him, and Killer ended up attacking Derek. 
+Derek ended up abusing him at school afterwards, and even sexually abused him in the basement of the school with a group of kids.
+When Warren graduated, his best friend was Daisy, a woman that was actually his age. She was abusive as well, but he repressed the worst of it and ended up loving her either way. When he turned 29, they finally parted ways.
+He spent two years alone in an apartment, barely surviving off of bread and water. He didn’t want to ask his mother for help because he felt like he’d asked for enough, and even ran out of his medicine and was unable to fill it again.
+Warren met his brothers and sister when he was 31, and is now trying to heal.</p>
+    				</div>
+    			</div>
+    			<div class="col3">
+    				<h2>links</h2>
+    				<a href="/">links</a> <!-- EDIT HERE -->
+    			</div>
+    		</div>
+    	</div>
+
+		<div class="chara">
+			<img src="https://78.media.tumblr.com/9bbdc7d9929dc1e7da3a63051b120ae7/tumblr_nx4d50BtVd1unjlk6o2_250.png" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch2">Warry</button>
+		</div>
+ 
+    	<div class="popup ch2">
+    		<div class="popupquote">"Oh how silly!"</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Warry</p>
+    				<p><b>Age:</b> Child</p>
+    				<p><b>Gender:</b> Unsure (he/him)</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> N/A</p>
+    				<p><b>Occupation:</b> Age Regression</p>
+    				    				<p><b>Distinguishing Features:</b> Childish speak, uses childish things..</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>Warry is a child. He’s age regression, to let Warren rest when he’s had too much. He looks the most similar to Warren. Has very little narration power. More TBA.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+
+		<div class="chara">
+			<img src="https://78.media.tumblr.com/70fb1a606696159c1d179b1919159ea2/tumblr_nx4d50BtVd1unjlk6o1_250.png" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch3">Wren</button>
+		</div>
+ 
+    	<div class="popup ch3">
+    		<div class="popupquote">"What's up, Beatrice?"</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Wren</p>
+    				<p><b>Age:</b> 31</p>
+    				<p><b>Gender:</b> Unsure (he/him)</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> Pan</p>
+    				<p><b>Occupation:</b> Mania</p>
+    				    				<p><b>Distinguishing Features:</b> Flashing color eyes. Really hyperactive, makes faces a lot.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>A manic personality. Since someone gave them the ability to change what they look like on the outside, he is the definition of a seizure warning. His eyes flash colors and his mouth is hard to follow. Breaks the fourth wall a lot and has very little empathy. Has medium narration power. More TBA.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+
+		<div class="chara">
+			<img src="https://78.media.tumblr.com/496f68464e411e8c8ce605d6c6a12c90/tumblr_nx4d50BtVd1unjlk6o9_250.png" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch4">Wreck</button>
+		</div>
+ 
+    	<div class="popup ch4">
+    		<div class="popupquote">"You gonna do something or just stand there and bleed?"</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Wreck</p>
+    				<p><b>Age:</b> 31</p>
+    				<p><b>Gender:</b> Female</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> Pan</p>
+    				<p><b>Occupation:</b> Sex <strike>Persecutor</strike></p>
+    				    				<p><b>Distinguishing Features:</b> Always has something in her mouth. Has breast augmentations to make her breasts fuller, always has a snapback.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>Wreck was a persecutor in Warren's body, however because she was deemed unhealthy by friends of Warren that were able to do this, they took her out of his body and made sure she couldn't hurt him. She looks slightly more female, and uses she/her pronouns. She is rarely ever seen without either gum or a lollipop in her mouth. Represses all of Warren’s bad memories, even if she has her own body she wasn't able to be completely severed. She doesn’t understand non-sexual affection. Has medium narration power. With her own body, has been able to start fully transitioning into a female. Has not had vaginoplasty. Used to have a boyfriend who only used her for sex and refused to call her she- simply saying they unless someone called him out on it. Her brother- or moreover, Warren's brother (but he counts as her brother too) ended up murdering him. More TBA.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+
+		<div class="chara">
+			<img src="https://78.media.tumblr.com/f91d23739bcedbb8184f1a875083be62/tumblr_nx4d50BtVd1unjlk6o5_250.png" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch5">Writer</button>
+		</div>
+ 
+    	<div class="popup ch5">
+    		<div class="popupquote">"I'll be god today."</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Writer</p>
+    				<p><b>Age:</b> 31</p>
+    				<p><b>Gender:</b> Genderless (they/them)</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> Demiromantic, asexual.</p>
+    				<p><b>Occupation:</b> Dissociation.</p>
+    				    				<p><b>Distinguishing Features:</b> Emotionless. Never wears a hat.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>Writer has a god complex, and very muted feelings. They dislike Killer, and are very critical of other people. They're the strongest of all the others. More TBA.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+    			<div class="chara">
+			<img src="https://78.media.tumblr.com/5d76d3136be10d111086c95f05831b6b/tumblr_nx4d50BtVd1unjlk6o3_250.png" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch6">Killer</button>
+		</div>
+ 
+    	<div class="popup ch6">
+    		<div class="popupquote">"Tell me it's okay."</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Killer</p>
+    				<p><b>Age:</b> 31</p>
+    				<p><b>Gender:</b> Genderless (it/its)</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> Demiromantic, sex repulsed.</p>
+    				<p><b>Occupation:</b> Protector, violence.</p>
+    				    				<p><b>Distinguishing Features:</b> Hair covers its eye, and its mouth is comically huge. Its teeth are very sharp.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>Killer is an animalistictype of person, who tries to protect the others through violence. Sometimes it dissociates and isn't able to recognize danger and not danger, and attacks seemingly unprovoked. It's very loving, even though it has a hard time speaking. It has no narration powers. More TBA.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+
+		<div class="chara">
+			<img src="https://78.media.tumblr.com/46250dbaaae93673ab4001b91f6b7345/tumblr_nx4d50BtVd1unjlk6o7_250.png" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch7">Ghost</button>
+		</div>
+ 
+    	<div class="popup ch7">
+    		<div class="popupquote">"I want to kill everybody in the world."</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Warren</p>
+    				<p><b>Age:</b> 31</p>
+    				<p><b>Gender:</b> Gender neutral, he/him</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> Quoisexual.</p>
+    				<p><b>Occupation:</b> Murderer.</p>
+    				    				<p><b>Distinguishing Features:</b> His eyes are completely white, and he usuall has a creepy grin unless he's offended.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>Warren, but he remembers every bad thing that has happened and hasn't repressed anything. None of the others know he exists. He has killed two of Warren's friends, and left him to wake up in confusion with blood on his hands. Has absolutely no care for anyone, and is the only TRULY bad one out of the bunch. More TBA.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+    	<div class="chara">
+			<img src="https://cdn.sfstation.com/wp-content/uploads/2014/11/watsky-regency-ballroom-120x120.jpg" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch8">Pretender</button>
+		</div>
+ 
+    	<div class="popup ch8">
+    		<div class="popupquote">"I wish you could see the wicked truth."</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> N/A</p>
+    				<p><b>Age:</b> 32</p>
+    				<p><b>Gender:</b> Whatever you want</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> You.</p>
+    				<p><b>Occupation:</b> An actor, to make you happy.</p>
+    				    				<p><b>Distinguishing Features:</b> Dresses like Warren.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>When Warren was in the hospital, he needed to act healthy to be let out. Pretender acted healthy, acted good for anyone who wanted Warren to be something. He just... acted.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+    	<div class="chara">
+			<img src="https://66.media.tumblr.com/8740f88d275de4db212dceeec1a016bd/tumblr_nx4d50BtVd1unjlk6o6_250.png" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch9">Wheat Thins</button>
+		</div>
+ 
+    	<div class="popup ch9">
+    		<div class="popupquote">"--"</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Wheat Thins (Used to be Reaper)</p>
+    				<p><b>Age:</b> 32</p>
+    				<p><b>Gender:</b> Non Binary (he/him)</p>
+    				<p><b>Species:</b> Atlas</p>
+    				<p><b>Sexuality:</b> Panromantic, Pansexual.</p>
+    				<p><b>Occupation:</b> Protector, .</p>
+    				    				<p><b>Distinguishing Features:</b> Has a smirk on his face a lot.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>Wheat Thins tries to take the brunt of any abuse thrown Warren's way, and is also partially the reason he doesn't remember many things. He also takes Warren's anger as best he can and uses it himself. He's a little sadistic. Has harmed a good friend of Warren's at the urging of Daisy.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+    	    	<div class="chara">
+			<img src="https://pbs.twimg.com/profile_images/919813262761324545/9m3DMcmg_400x400.jpg" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch10">Dexter Dally</button>
+		</div>
+ 
+    	<div class="popup ch10">
+    		<div class="popupquote">"--"</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Dexter Dally (used to be Daisy)</p>
+    				<p><b>Age:</b> 33</p>
+    				<p><b>Gender:</b> Male (he/him)</p>
+    				<p><b>Species:</b> Jackal/Kitsune hybrid</p>
+    				<p><b>Sexuality:</b> Androsexual.</p>
+    				<p><b>Occupation:</b> Unemployed.</p>
+    				    				<p><b>Distinguishing Features:</b> Has jackal ears and a tail sometimes. Has a nose piercing. Albino.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>Dex is actually part of his own median system, however the other person in it is completely gone now. The other person was a female- which went along with his old body- and was very abusive toward Warren, his system, and some other people. Dex still has nightmares because he remembers everything she did but as if he himself did it. Warren's lover Eazy is Dex's half brother. He's still a little violent, but doesn't like to hurt people who don't deserve it. If you pet his ears or tail he makes cute noises.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+    	    	<div class="chara">
+			<img src="https://i.pinimg.com/736x/6e/00/ea/6e00eae4558a77f2a095389871072d7f--modeling-jersey.jpg" style="width:120px;height:120px;"></img> <!-- EDIT HERE -->
+			<button class="name" id="ch11">Derek Frevert</button>
+		</div>
+ 
+    	<div class="popup ch11">
+    		<div class="popupquote">"--"</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>Quick Look</h2>
+    				<p><b>Name:</b> Derek Frevert</p>
+    				<p><b>Age:</b> 30</p>
+    				<p><b>Gender:</b> Male (he/him)</p>
+    				<p><b>Species:</b> Human</p>
+    				<p><b>Sexuality:</b> Bisexual.</p>
+    				<p><b>Occupation:</b> Drummer.</p>
+    				    				<p><b>Distinguishing Features:</b> His bright ass red hair.</p>
+                </div>
+                <div class="col2">
+                    <h2>About</h2>
+                    <div class="para">
+                        <p>Derek used to be friends with Warren in highschool before Killer beat him during Warren's 18th birthday. Derek then bullied Warren and ultimately sexually harmed him in the school basement two years later. Derek however had pushed all his anger into Warren and after attacking another person for accidentally doing something bad while dissociating and nearly losing his favorite person, he decided to get therapy and tried to understand what the problem was. He is in no way somehow innocent now, but he tries very much so to not harm anyone else. Has an anger disorder.</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a> <!-- EDIT HERE -->
+                </div>
+    		</div>
+    	</div>
+
+    	<!--
+
+		HERE'S a copy and paste version:
+		MAKE SURE YOU CHANGE THE IDS TO MATCH
+
+		for example: below it says id="ch" in the name button. change that to whatever, but make sure it matches whatever is in <div class="popup ch">. this ensures the right popup appears.
+
+		if you need help send me an ask @ fatalst.tumblr.com/ask
+
+		<div class="chara">
+			<img src="/"></img>
+			<button class="name" id="ch">name</button>
+		</div>
+ 
+    	<div class="popup ch">
+    		<div class="popupquote">quote</div>
+    		<div class="popupcont">
+                <div class="col">
+                    <h2>header</h2>
+                    <p><b>title:</b> ??</p>
+                </div>
+                <div class="col2">
+                    <h2>header</h2>
+                    <div class="para">
+                        <p>text</p>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h2>links</h2>
+                    <a href="/">link</a>
+                </div>
+    		</div>
+    	</div>
+
+    	`-->
+
+	</div>
+
+	<!-- please don't touch this!! -->
+	<div id="overlay"></div>
+
+	<div id="punk">
+            <a href="https://www.fatalst.tumblr.com">&copy;</a>
+    </div>
+
+    <script>
+
+        var $overlay = $('#overlay');
+        var $button = $('.name').click(function() {
+            $overlay.fadeIn(800);
+            $("." + this.id).fadeIn(800);
+        });
+ 
+        var $closePopup = $('#overlay').click(function() {
+            $overlay.fadeOut(800);
+            $(".popup").fadeOut(800);
+        });
+ 
+    </script>
+	
+
+<iframe scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0; z-index:9999;" id="ga_target"></iframe><script type="text/javascript">
+    (function(){
+        var analytics_frame = document.getElementById('ga_target');
+        var analytics_iframe_loaded;
+        var user_logged_in;
+        var blog_is_nsfw = 'No';
+
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+        eventer(messageEvent,function(e) {
+            var message = (e.data && e.data.split) ? e.data.split(';') : '';
+            switch (message[0]) {
+                case 'analytics_iframe_loaded':
+                    analytics_iframe_loaded = true;
+                    postCSMessage();
+                    postGAMessage();
+                    break;
+                case 'user_logged_in':
+                    user_logged_in = message[1];
+                    postGAMessage();
+                    break;
+            }
+        }, false);
+
+        analytics_frame.src = "https://assets.tumblr.com/analytics.html?_v=9f5febfd57a8a649c598d888f2d9e062#" +
+                              "https://atlasxborn.tumblr.com";
+        function postGAMessage() {
+            if (analytics_iframe_loaded && user_logged_in) {
+                var is_ajax = false;
+                analytics_frame.contentWindow.postMessage(['tick_google_analytics', is_ajax, user_logged_in, blog_is_nsfw, '/a?route=custom_page'].join(';'), analytics_frame.src.split('/analytics.html')[0]);
+            }
+        }
+        function postCSMessage() {
+            COMSCORE = true;
+            analytics_frame.contentWindow.postMessage('enable_comscore;' + window.location, analytics_frame.src.split('/analytics.html')[0]);
+        }
+    })();
+</script><script type="text/javascript" nonce="ufOuh8sJISibfnKTYNOTgIjPrTE">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1697233605&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDovL2F0bGFzeGJvcm4udHVtYmxyLmNvbS9hIiwicmVxdHlwZSI6MCwicm91dGUiOiJjdXN0b21fcGFnZSJ9&U=KJLCNOLHBE&K=9c6a031275cb24aceaccf06252e5cac31f204f690652473ec8cfcf24aa517e49&R='.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1697233605&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDovL2F0bGFzeGJvcm4udHVtYmxyLmNvbS9hIiwicmVxdHlwZSI6MCwicm91dGUiOiJjdXN0b21fcGFnZSIsIm5vc2NyaXB0IjoxfQ==&U=KJLCNOLHBE&K=5e4f58c3336c1171bb4032eef448be9e24bd982b2ebd2153612536db5c1ce1d6&R="></noscript><noscript id="bootloader" data-bootstrap="{&quot;Components&quot;:{&quot;PostActivity&quot;:[],&quot;NotificationPoller&quot;:{&quot;messaging_keys&quot;:[],&quot;token&quot;:&quot;&quot;,&quot;inbox_unread&quot;:0},&quot;DesktopDashboardLogo&quot;:{&quot;animations&quot;:[[&quot;https:\/\/assets.tumblr.com\/images\/logo\/hover-animations\/1.png?_v=161861acded461bb6e995593a3bae835&quot;,&quot;https:\/\/assets.tumblr.com\/images\/logo\/hover-animations\/1@2x.png?_v=496a774637302a598c851381d00009b0&quot;]]},&quot;TumblelogIframe&quot;:{&quot;unified&quot;:true,&quot;variant&quot;:null,&quot;isCompact&quot;:true,&quot;tumblelogBundleSrc&quot;:&quot;https:\/\/assets.tumblr.com\/client\/prod\/standalone\/tumblelog\/index.build.js?_v=cbd1c998a53640254d3eb2774a264c6b&quot;,&quot;tumblelogName&quot;:&quot;atlasxborn&quot;,&quot;isLoggedIn&quot;:false,&quot;isFriend&quot;:false,&quot;formKey&quot;:&quot;&quot;,&quot;canSubscribe&quot;:false,&quot;isSubscribed&quot;:false,&quot;tumblelogTitle&quot;:&quot;\ud835\udd64\ud835\udd6a\ud835\udd64\ud835\udd65\ud835\udd56\ud835\udd5e\ud835\udd5a\ud835\udd54&quot;,&quot;tumblelogAvatar&quot;:&quot;https:\/\/64.media.tumblr.com\/avatar_942e8ce63119_64.pnj&quot;,&quot;tumblelogAvatar128&quot;:&quot;https:\/\/64.media.tumblr.com\/avatar_942e8ce63119_128.pnj&quot;,&quot;tumblelogHost&quot;:&quot;https:\/\/atlasxborn.tumblr.com&quot;,&quot;hasCustomDomain&quot;:false,&quot;isOptica&quot;:false,&quot;isCustomTheme&quot;:true,&quot;themeHeaderImage&quot;:&quot;https:\/\/static.tumblr.com\/180be5142348371cd3bdb41a0758e965\/tsgvskx\/oVfpl9gnq\/tumblr_static_tumblr_static_3mj1x4zhrhogco0gw88ow4s88_focused_v3.gif&quot;,&quot;themeBackgroundColor&quot;:&quot;#470a00&quot;,&quot;themeTitleColor&quot;:&quot;#5AC9E1&quot;,&quot;themeAccentColor&quot;:&quot;#78c9a1&quot;,&quot;brag&quot;:true,&quot;canShowAd&quot;:true,&quot;isPremium&quot;:false,&quot;showLrecAds&quot;:false,&quot;showStickyLrecBackfill&quot;:false,&quot;showGeminiAds&quot;:false,&quot;geminiSectionCodeDesktop&quot;:&quot;a10bca9c-0c5d-4a02-ab13-14ab8513d81d&quot;,&quot;geminiSectionCodeMobile&quot;:&quot;ced63809-b609-4aca-96a0-abc099acba6b&quot;,&quot;currentPageType&quot;:null,&quot;currentPage&quot;:false,&quot;searchQuery&quot;:&quot;&quot;,&quot;tag&quot;:&quot;&quot;,&quot;query&quot;:&quot;&quot;,&quot;chrono&quot;:false,&quot;postId&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/atlasxborn.tumblr.com\/a&quot;,&quot;postUrl&quot;:&quot;&quot;,&quot;openInPeeprUrl&quot;:&quot;https:\/\/www.tumblr.com\/atlasxborn&quot;,&quot;isBlocked&quot;:null,&quot;isAdmin&quot;:false,&quot;lookupButtonUrl&quot;:&quot;&quot;,&quot;showSpamButton&quot;:false,&quot;showRootPostButton&quot;:false,&quot;rootPostUrl&quot;:&quot;&quot;,&quot;showRadarPostButton&quot;:false,&quot;radarKeys&quot;:&quot;&quot;,&quot;isUniblocked&quot;:false,&quot;isNsfw&quot;:false,&quot;isAdult&quot;:false,&quot;isSpam&quot;:false,&quot;isPrimaryBlog&quot;:false,&quot;canEdit&quot;:false,&quot;canReblogSelf&quot;:false,&quot;showLikeButton&quot;:false,&quot;showReblogButton&quot;:false,&quot;reblogUrl&quot;:&quot;&quot;,&quot;showMessagingButton&quot;:false,&quot;loginCheckIframeSrc&quot;:&quot;https:\/\/assets.tumblr.com\/assets\/html\/iframe\/login_check.html?_v=3de94a184d600617102ddd5b48fb36e9&quot;,&quot;appInstallUrls&quot;:{&quot;android&quot;:&quot;https:\/\/play.google.com\/store\/apps\/details?id=com.tumblr\u0026referrer=utm_source%3Dtumblr%26utm_medium%3Diframe%26utm_campaign%3Dbn_continue_or_install_cta&quot;,&quot;ios&quot;:&quot;https:\/\/apps.apple.com\/app\/apple-store\/id305343404?pt=212308\u0026ct=bn_continue_or_install_cta\u0026mt=8&quot;},&quot;appOpenReferrer&quot;:&quot;bn_header_open_btn&quot;,&quot;isShowSearch&quot;:true,&quot;supplyLogging&quot;:[],&quot;secondsSinceLastActivity&quot;:-1,&quot;installUrlOpenFailed&quot;:{&quot;android&quot;:&quot;https:\/\/play.google.com\/store\/apps\/details?id=com.tumblr\u0026referrer=utm_source%3Dtumblr%26utm_medium%3Diframe%26utm_campaign%3Dbn_header_app_open_failed&quot;,&quot;ios&quot;:&quot;https:\/\/apps.apple.com\/app\/apple-store\/id305343404?pt=212308\u0026ct=bn_header_app_open_failed\u0026mt=8&quot;},&quot;loginWallVariant&quot;:&quot;small_center&quot;},&quot;CommunityLabels&quot;:{&quot;has_community_label&quot;:false,&quot;is_single&quot;:true,&quot;redirect_target&quot;:null}},&quot;Flags&quot;:{&quot;features&quot;:&quot;eyJmaWx0ZXJfbnNmdyI6dHJ1ZSwibW9iaWxlX3dlYl9nYXRlIjp0cnVlLCJzYWZlX21vZGUiOnRydWUsInNhZmVfbW9kZV9lbmFibGVkIjp0cnVlLCJrZXljb21tYW5kX2F1dG9fcGFnaW5hdGUiOnRydWUsImxvZ2dlZF9vdXRfc2VhcmNoIjp0cnVlLCJrcmFrZW5fd2ViX2xvZ2dpbmdfbGlicmFyeSI6dHJ1ZSwibGl2ZXBob3Rvc193ZWIiOnRydWUsInVzZXJfdGFnX2ZpbHRlcmluZyI6dHJ1ZSwic2FmZV9tb2RlX293bl9wb3N0Ijp0cnVlLCJwcm9qZWN0X3hfYXBwZWFsIjp0cnVlLCJtb2JpbGVfd2ViX3Bob3Rvc2V0cyI6dHJ1ZSwiaGlkZV9kZWZhdWx0X2hlYWRlcnNfYmxvZ19jYXJkcyI6dHJ1ZSwibm90aWZpY2F0aW9uX3JlcGx5X2xpbmtfdG9fbm90ZXMiOnRydWUsInR5cGluZ19pbmRpY2F0b3Jfd3JpdGUiOnRydWUsInR1bWJscl92aWRlb19zcG9uc29yZWRfZGF5Ijp0cnVlLCJjYXB0Y2hhOnVzZV9yZWNhcHRjaGEyIjp0cnVlLCJsaXR0bGVfc2lzdGVyIjp0cnVlLCJsb2dfbGFkeSI6dHJ1ZSwicmVkcG9wX3Bvc3RfZm9ybV9tb2JpbGVfY3JlYXRlIjp0cnVlLCJsZWdhY3lfcG9zdF9mb3JtX2J1dHRvbnNfbGlua190b19yZWRwb3AiOnRydWUsInNob3dfdHNwX2NsaWNrX3Rocm91Z2hfdG9nZ2xlIjp0cnVlLCJkYXJsYV9hZF9mZWVkYmFjayI6dHJ1ZSwic3RhdHVzX2luZGljYXRvciI6dHJ1ZSwiY29udmVyc2F0aW9uYWxfbm90aWZpY2F0aW9ucyI6dHJ1ZSwiZGlzYWJsZV95YWhvb19iX2Nvb2tpZSI6dHJ1ZSwibGl2ZXBob3RvcyI6dHJ1ZSwiY29tbXVuaXR5X2xhYmVscyI6dHJ1ZX0=&quot;},&quot;Context&quot;:{&quot;name&quot;:&quot;default&quot;,&quot;time&quot;:1697233605000,&quot;userinfo&quot;:{&quot;primary&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;channels&quot;:[]},&quot;hosts&quot;:{&quot;assets_host&quot;:&quot;https:\/\/assets.tumblr.com&quot;,&quot;secure_assets_host&quot;:&quot;https:\/\/assets.tumblr.com&quot;,&quot;www_host&quot;:&quot;https:\/\/www.tumblr.com&quot;,&quot;secure_www_host&quot;:&quot;https:\/\/www.tumblr.com&quot;,&quot;embed_host&quot;:&quot;https:\/\/embed.tumblr.com&quot;,&quot;safe_host&quot;:&quot;https:\/\/safe.txmblr.com&quot;,&quot;platform_host&quot;:&quot;https:\/\/platform.tumblr.com&quot;},&quot;language&quot;:&quot;en_US&quot;,&quot;language_simple&quot;:&quot;en&quot;,&quot;assets&quot;:&quot;https:\/\/assets.tumblr.com\/client\/prod\/&quot;},&quot;Translations&quot;:{&quot;%1$sReport %2$s&#039;s post?%3$sIf it violates our community guidelines, we&#039;ll remove it.%4$s&quot;:&quot;%1$sReport %2$s&#039;s reblog?%3$sIf it violates our community guidelines, we&#039;ll remove it.%4$s&quot;,&quot;%1$sReport %2$s&#039;s reply?%3$sIf it violates our community guidelines, we&#039;ll remove it.%4$s&quot;:&quot;%1$sReport %2$s&#039;s reblog?%3$sIf it violates our community guidelines, we&#039;ll remove it.%4$s&quot;,&quot;%1$sDelete your tip??%2$s&quot;:&quot;%1$sDelete your tip?%2$s&quot;,&quot;Deleting your tip&quot;:&quot;Deleting your tip will only remove it from the replies tab and notes. %1$sYou won&#039;t receive a refund of your tip.%2$s For further help contact %3$sTumblr Support%4$s.&quot;}}"></noscript><script src="https://assets.tumblr.com/client/prod/standalone/tumblelog/index.build.js?_v=cbd1c998a53640254d3eb2774a264c6b"></script></body>
+</html>
