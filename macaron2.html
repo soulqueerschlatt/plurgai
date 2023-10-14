@@ -1,0 +1,723 @@
+<!DOCTYPE html PUBLIC>
+
+<!-- nuclearthemes on tumblr || thanks for using my code! -->
+<!-- consider supporting me on ko-fi >> https://ko-fi.com/cameroni -->
+
+<!-- 
+|| CREDITS ||
+
+• Custom tooltips by Atomiks >> https://atomiks.github.io/tippyjs/
+• Fonts from Google >> https://fonts.google.com/
+• Icons from Font Awesome >> https://fontawesome.com/
+• Placeholders from Unsplash >> https://unsplash.com/
+• Tumblr controls fix by odeysseus >> https://odeysseus.tumblr.com/
+
+-->
+
+<html>
+ 
+<head>
+ 
+<title>{Name} / title</title> <!-- page title -->
+
+<link rel="shortcut icon" href="{Favicon}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css?family=Varta:400,400i,700,700i|Rancho:400,400i,700,700i" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/802dca85f3.js" crossorigin="anonymous"></script>
+
+<style type="text/css">
+
+* {margin:0; padding:0;}
+
+/* ----------------------------------------------------------------------- */
+/* --------------------------- tumblr controls --------------------------- */
+
+.tmblr-iframe {
+    filter: invert(100%);
+    -o-filter: invert(100%); 
+    -moz-filter: invert(100%); 
+    -ms-filter: invert(100%); 
+    -webkit-filter: invert(100%); 
+    opacity: 0.2;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    transform: scale(0.7,0.7);
+    transform-origin: 100% 0%;
+    -ms-transform-origin: 100% 0%;
+    -webkit-transform-origin: 100% 0%;
+    transition: 0.4s;
+    -o-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    white-space: nowrap;
+} 
+    
+.tmblr-iframe:hover {
+    opacity: 1; 
+}
+
+/* ----------------------------------------------------------------------- */
+/* --------------------------- custom tooltips --------------------------- */
+
+.tippy-tooltip.custom-theme {
+    background-color: #54ffd4;
+    border-radius: 0;
+    color: #212121;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------------- */
+/* -------------------- custom selection & scrollbar --------------------- */
+
+::-moz-selection {background: #ff75b4; color: #ffffff;}
+::selection {background: #ff75b4; color: #ffffff;}
+
+::-webkit-scrollbar-thumb 
+{background: #7ee3ed; border: 5px solid #fff; border-radius: 10px;}
+::-webkit-scrollbar-track 
+{background: #ff75b4; border: 7px solid #ffffff;}
+::-webkit-scrollbar 
+{width: 15px;}
+
+/* ----------------------------------------------------------------------- */
+/* ----------------------------- page layout ----------------------------- */
+
+body {
+    background: #ffffff;                /* background color */
+    color: #212121;                     /* text color */
+    font-family: Varta;                 /* font */
+    font-size: 15px;                    /* font size */
+    text-align: justify;                /* text align */
+}
+
+#header {                               /* top header */
+    background-image: linear-gradient(to bottom right, #7ee3ed, #54ffd4);
+    height: 130px;
+    margin: 40px auto;
+    overflow: visible;
+    width: 900px;
+}
+
+#container {                            /* content container */
+    height: 700px;
+    margin: 0 auto 50px auto;
+    width: 900px;
+}
+
+/* ----------------------------------------------------------------------- */
+/* --------------------------- header content ---------------------------- */
+
+#headerpic {                            /* icon */
+    border-radius: 100%;
+    float: left;
+    margin: 15px;
+    width: 100px;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+#headerpic:hover {
+    cursor: cell;
+    transform: rotate(-10deg) scale(0.75);
+    -moz-transform: rotate(-10deg) scale(0.75);
+    -ms-transform: rotate(-10deg) scale(0.75);
+    -o-transform: rotate(-10deg) scale(0.75);
+    -webkit-transform: rotate(-10deg) scale(0.75);
+    transition: 0.4;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+.dropbtn {                              /* dropdown menu button */
+    background-color: #ffffff;
+    border: none;
+    border-radius: 100%;
+    color: #7ee3ed;
+    cursor: help;
+    font-size: 17px;
+    outline: none;
+    padding: 15px;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    width: 45px;
+}
+
+.dropbtn:hover, .dropbtn:focus {        /* dropdown menu button hover */
+    background-color: #ff75b4;
+    color: #ffffff;
+    transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transition: 0.4;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+.dropdown {                             /* dropdown box */
+    display: inline-block;
+    float: right;
+    margin: 42px;
+    position: relative;
+}
+
+.dropdown-content {                     /* dropdown content */
+    display: none;
+    background-color: #ffffff;
+    border: 5px solid #ff75b4;
+    border-radius: 20px;
+    overflow: auto;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-55px);
+    -moz-transform: translateX(-55px);
+    -ms-transform: translateX(-55px);
+    -o-transform: translateX(-55px);
+    -webkit-transform: translateX(-55px);
+    width: 150px;
+    z-index: 1;
+}
+
+.dropdown-content a {                   /* dropdown content links */
+    color: #212121;
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+.dropdown a:hover {                     /* dropdown content links hover */
+    background-color: #ff75b4;
+    color: #ffffff;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+.show {
+    display: block;
+}
+
+/* ----------------------------------------------------------------------- */
+/* ------------------------------- content ------------------------------- */
+
+#leftcontent {                          /* container for all left content */
+    float: left;
+    height: 700px;
+    width: 720px;
+}
+    
+#picbar {                               /* container for pictures on the right */
+    float: right;
+    height: 700px;
+    overflow: none;
+    width: 160px;
+}
+
+.sidepics {                             /* pictures */
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    width: 100%;
+}
+
+.sidepics:hover {                       /* pictures hover */
+    cursor: cell;
+    transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    transition: 0.4;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+#aboutcontainer {                       /* container for about and icons */
+    float: left;
+    height: 120px;
+    width: 313px;
+}
+
+#about {                                /* about section (text!) */
+    border: 1px solid #54ffd4;
+    border-bottom: none;
+    border-radius: 20px 20px 0px 0px;
+    height: 60px;
+    padding: 20px;
+    text-align: center;    
+    width: calc(100% - 40px);
+    width: -moz-calc(100% - 40px);
+    width: -webkit-calc(100 - 40px);
+}
+
+#iconbar {                              /* about section (icon bar!) */
+    background-image: linear-gradient(to bottom right, #7ee3ed, #54ffd4);
+    border: 1px solid #54ffd4;
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
+    height: 60px;
+    width: 100%;
+}
+
+.socials {                              /* icon bar icons */
+    display: inline-block;
+    color: #ffffff;
+    font-size: 24px;
+    height: 45px;
+    padding-top: 15px;
+    text-align: center;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    width: 60px;
+}
+
+.socials:hover {                        /* icon bar icons hover */
+    color: #ff75b4;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+#facts {                                /* facts section */
+    border: 1px solid #54ffd4;
+    border-radius: 20px;
+    float: right;
+    height: 140px;
+    line-height: 24px;
+    margin-left: 20px;
+    padding: 10px;
+    width: 350px;
+}
+
+#left {                                 /* left column in facts section */
+    border-right: 1px dashed #ff75b4;
+    float: left;
+    font-style: italic;
+    font-weight: bold;
+    margin-right: 50px;
+    padding-right: 50px;
+    text-transform: uppercase;
+}
+
+#bio {                                  /* bio section */
+    border: 1px solid #54ffd4;
+    border-radius: 20px;
+    float: left;
+    height: 475px;
+    margin-top: 20px;
+    overflow: auto;
+    padding: 20px;
+    -moz-overflow-style: none;
+    -ms-overflow-style: none;
+    -o-overflow-style: none;
+}
+
+#bio::-webkit-scrollbar {
+    display: none;
+}
+
+/* ----------------------------------------------------------------------- */
+/* -------------------------------- text --------------------------------- */
+
+h1 {                                    /* header title */
+    color: #ffffff;
+    float: left;
+    font-family: Rancho;
+    font-size: 2.5em;
+    font-weight: normal;
+    margin-top: 45px;
+}
+
+h2 {                                    /* about section title */
+    font-family: Varta;
+    font-size: 1.5em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+a {
+    color: #7ee3ed;                     /* link color */
+    text-decoration: none;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+a:hover {   
+    color: #ff75b4;                     /* link hover color */
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+b {                                     /* bold text */
+    color: #ff75b4;
+}
+
+/* ----------------------------------------------------------------------- */
+/* ----------------------------- responsive ------------------------------ */
+
+@media only screen and (max-width: 1024px){
+    #header, #container {width: 90%;}
+    #container, #leftcontent, #picbar {height: 880px;}
+    #leftcontent {width: 75%;}
+    #aboutcontainer, #facts {float: none;}
+    #aboutcontainer {margin: 0px auto 60px auto;}
+    #facts {margin: auto; width: 295px;}
+    #left {margin-right: 30px; padding-right: 30px;}
+    .sidepics {margin-bottom: 80px;}
+}
+
+@media only screen and (max-width: 750px){
+    #leftcontent {width: 70%;}
+    #picbar {width: 25%;}
+}
+
+@media only screen and (max-width: 550px){
+    #header {height: 80px; margin-bottom: 20px;}
+    #headerpic {width: 50px;}
+    h1 {font-size: 2em; margin-top: 25px;}
+    #leftcontent {width: 100%;}
+    #picbar {height: 100px; margin: 20px 0px; width: 100%;}
+    #left {margin-right: 50px; padding-right: 50px;}
+    .sidepics {display: inline; margin: 0px 2px; width: 23%;}
+    .dropdown {margin: 18px 10px;}
+    .socials {width: 19%;}
+    
+    #aboutcontainer {
+        width: calc(100% - 2px);
+        width: -moz-calc(100% - 2px);
+        width: -webkit-calc(100 - 2px);
+    }
+    
+    #facts {
+        width: calc(100% - 22px);
+        width: -moz-calc(100% - 22px);
+        width: -webkit-calc(100 - 22px);
+    }
+    
+    .dropdown-content {
+        transform: translateX(-110px);
+        -moz-transform: translateX(-110px);
+        -ms-transform: translateX(-110px);
+        -o-transform: translateX(-110px);
+        -webkit-transform: translateX(-110px);
+    }
+}
+
+/* ----------------------------------------------------------------------- */
+/* ------------------------------- credits ------------------------------- */
+
+#credit {
+    background-color: #ffffff;
+    color: #7ee3ed;
+    bottom: 0;
+    font-size: 20px;
+    font-style: italic;
+    margin: 10px;
+    padding: 10px 0px;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    width: 40px;
+}
+
+#credit:hover {
+    background-color: #7ee3ed;
+    color: #ffffff;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+/* ----------------------------------------------------------------------- */
+    
+</style>
+    
+</head>
+
+<body>
+
+<!--------------------------- START MAIN CONTENT---------------------------->
+
+<!-- start header -->
+
+<div id="header">
+
+    <!-- header image -->
+
+    <a href="/">
+        <img id="headerpic" title="{Name}" src="https://i.imgur.com/7bUlj8R.jpg">
+    </a>
+    
+    <!-- header title -->
+
+    <h1>>> petrichor</h1>
+    
+    <!-- header dropdown menu -->
+    
+    <div class="dropdown">
+    
+        <!-- dropdown menu button -->
+        
+        <button onclick="myFunction()" class="dropbtn" title="show links">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+        
+        <!-- dropdown menu links -->
+            
+        <div id="myDropdown" class="dropdown-content">
+            
+            <a href="/">home</a>
+            <a href="">link 1</a>
+            <a href="">link 2</a>
+            <a href="">link 3</a>
+
+        </div>
+            
+    </div>
+    
+</div>
+
+<!-- end header -->
+
+<!-- start container -->
+
+<div id="container">
+
+    <!-- start text content -->
+
+    <div id="leftcontent">
+    
+        <!-- about -->
+        
+        <div id="aboutcontainer">
+
+            <!-- about section -->
+
+            <div id="about">
+    
+                <h2>
+                    hi! my name is <span style="color:#ff75b4">apollo</span>
+                </h2>
+                
+                <i>20 years old • male (he/him) • bisexual </i>
+        
+            </div>
+    
+            <!-- social media icons -->
+    
+            <div id="iconbar">
+    
+                <a href="" title="instagram">
+                    <div class="socials">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+        
+                <a href="" title="twitter">
+                    <div class="socials">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </a>
+        
+                <a href="" title="spotify">
+                    <div class="socials">
+                        <i class="fab fa-spotify"></i>
+                    </div>
+                </a>
+        
+                <a href="" title="twitch">
+                    <div class="socials">
+                        <i class="fab fa-twitch"></i>
+                    </div>
+                </a>
+        
+                <a href="" title="artstation">
+                    <div class="socials">
+                        <i class="fab fa-artstation"></i>
+                    </div>
+                </a>
+    
+          </div>
+        
+        </div>
+        
+        <!-- facts -->
+        
+        <div id="facts">
+        
+            <!-- left column -->
+        
+            <div id="left">
+        
+                reading...
+                <br>
+                playing...
+                <br>
+                studying...
+                <br>
+                eating...
+                <br>
+                thinking about...
+                <br>
+                listening to...
+            
+            </div>
+            
+            <!-- right column -->
+        
+            <div id="right">
+        
+                the hobbit
+                <br>
+                stardew valley
+                <br>
+                history
+                <br>
+                tacos!
+                <br>
+                boys... :/
+                <br>
+                onerepublic
+            
+            </div>
+        
+        </div>
+        
+        <!-- bio -->
+        
+        <div id="bio">
+    
+This is where you can put a whole bunch of text. This block has automatic overflow, so you don't have to worry about writing too much. You can also add <b>bold text here</b> or <i>italic text</i>. You can even put <a href="">links</a> here if you'd like!
+
+<br><br>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante metus dictum at tempor commodo ullamcorper a lacus. Nulla posuere sollicitudin aliquam ultrices sagittis orci a. Egestas congue quisque egestas diam in arcu cursus euismod quis. Scelerisque viverra mauris in aliquam sem. Tellus molestie nunc non blandit massa enim nec. Velit laoreet id donec ultrices tincidunt arcu. Elit pellentesque habitant morbi tristique senectus et netus et malesuada. Quisque egestas diam in arcu cursus. Varius duis at consectetur lorem donec massa. Mollis nunc sed id semper risus in hendrerit.
+
+<br><br>
+
+Nibh tortor id aliquet lectus proin. Ac turpis egestas sed tempus urna et. Egestas congue quisque egestas diam in arcu cursus euismod. Dis parturient montes nascetur ridiculus mus. Enim eu turpis egestas pretium. Nulla aliquet enim tortor at. Odio ut enim blandit volutpat maecenas volutpat. Facilisi morbi tempus iaculis urna id. Pretium lectus quam id leo in vitae turpis massa sed. Diam sit amet nisl suscipit adipiscing bibendum est. Ante in nibh mauris cursus mattis molestie. Orci porta non pulvinar neque laoreet suspendisse interdum. Erat pellentesque adipiscing commodo elit at. Tincidunt vitae semper quis lectus.
+
+<br><br>
+
+Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Netus et malesuada fames ac turpis. Blandit aliquam etiam erat velit. Tempor orci dapibus ultrices in iaculis nunc sed. In eu mi bibendum neque egestas congue quisque egestas. Porta non pulvinar neque laoreet suspendisse interdum consectetur libero. Quis risus sed vulputate odio ut enim blandit volutpat maecenas. Varius duis at consectetur lorem donec. Dolor purus non enim praesent elementum facilisis leo vel. Ipsum faucibus vitae aliquet nec. Sit amet purus gravida quis blandit. Semper quis lectus nulla at volutpat diam ut venenatis tellus. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Quisque sagittis purus sit amet volutpat consequat mauris. Diam maecenas sed enim ut sem. Pharetra magna ac placerat vestibulum lectus. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Eleifend donec pretium vulputate sapien nec sagittis.
+        
+        </div>
+        
+    </div>
+
+    <!-- end text content -->
+    
+    <!-- start pictures bar -->
+    
+    <div id="picbar">
+        
+        <img class="sidepics" src="https://i.imgur.com/ML1J3uk.jpg">
+        <img class="sidepics" src="https://i.imgur.com/wWECFHQ.jpg">
+        <img class="sidepics" src="https://i.imgur.com/R22z5Md.jpg">
+        <img class="sidepics" src="https://i.imgur.com/fCoAfoN.jpg">
+        
+    </div>
+    
+    <!-- end pictures bar -->
+    
+</div>
+
+<!-- end container -->
+
+<!---------------------------- END MAIN CONTENT----------------------------->
+
+<!-- don't edit beyond this point please! colors can be modified in <style> -->
+
+<a id="credit" target="blank" title="by bones" href="https://nuclearthemes.tumblr.com/"><i class="fas fa-skull"></i></a>
+
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    
+    tippy('[title]', {
+        theme: 'custom',
+        arrow: false,
+        delay: [200, 0],
+        zIndex: 9999999999,
+        maxWidth: 300,
+
+        content(reference) {
+            const title = reference.getAttribute('title');
+            reference.removeAttribute('title');
+            return title;
+        },
+    });
+</script>
+
+</body>
+
+</html>
